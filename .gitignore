@@ -1,0 +1,31 @@
+# Dir
+
+**/build
+
+# Precompiled Headers
+**/*.gch
+**/*.pch
+
+# Libraries
+libft/*.a
+**/*.a
+
+# Executables
+**/*.out
+
+# Debug files
+**/*.dSYM
+
+# Swap files
+**/*.swp
+
+# Vscode
+.vscode
+*.json
+
+# Mac shit
+
+**/.DS_Store
+
+# Random
+auteur
