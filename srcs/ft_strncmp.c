@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoinf.c                                      :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 10:46:40 by arsciand          #+#    #+#             */
-/*   Updated: 2019/07/09 11:05:57 by arsciand         ###   ########.fr       */
+/*   Created: 2018/11/06 16:11:59 by fcatusse          #+#    #+#             */
+/*   Updated: 2019/07/19 12:19:37 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-char	*ft_strjoinf(char *s1, char *s2, uint8_t vars)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	*str;
+	size_t	i;
 
-	str = ft_strjoin(s1, s2);
-	if (vars == 0)
-		return (str);
-	else if (vars == 1)
-		free(s1);
-	else if (vars == 2)
-		free(s2);
-	else
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (*s1 && *s1 == *s2 && ++i < n)
 	{
-		free(s1);
-		free(s2);
+		s1++;
+		s2++;
 	}
-	return (str);
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

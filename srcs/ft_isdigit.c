@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoinf.c                                      :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 10:46:40 by arsciand          #+#    #+#             */
-/*   Updated: 2019/07/09 11:05:57 by arsciand         ###   ########.fr       */
+/*   Created: 2018/11/06 15:55:26 by fcatusse          #+#    #+#             */
+/*   Updated: 2019/07/19 12:17:14 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-char	*ft_strjoinf(char *s1, char *s2, uint8_t vars)
+int		ft_isdigit(int c)
 {
-	char	*str;
-
-	str = ft_strjoin(s1, s2);
-	if (vars == 0)
-		return (str);
-	else if (vars == 1)
-		free(s1);
-	else if (vars == 2)
-		free(s2);
-	else
-	{
-		free(s1);
-		free(s2);
-	}
-	return (str);
+	return (c >= '0' && c <= '9');
 }

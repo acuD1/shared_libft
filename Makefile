@@ -80,6 +80,25 @@ SRC += $(S_PATH)ft_strlen.c
 SRC += $(S_PATH)ft_strsplit.c
 SRC += $(S_PATH)ft_strsub.c
 SRC += $(S_PATH)ft_tabdel.c
+SRC += $(S_PATH)ft_tablen.c
+SRC += $(S_PATH)ft_tabcopy.c
+SRC += $(S_PATH)ft_tabfree.c
+SRC += $(S_PATH)ft_split.c
+SRC += $(S_PATH)ft_isblank.c
+SRC += $(S_PATH)ft_putchar.c
+SRC += $(S_PATH)ft_isdigit.c
+SRC += $(S_PATH)ft_putendl_fd.c
+SRC += $(S_PATH)ft_putstr.c
+SRC += $(S_PATH)ft_putstr_fd.c
+SRC += $(S_PATH)ft_strncmp.c
+SRC += $(S_PATH)ft_strrchr.c
+SRC += $(S_PATH)is_print.c
+SRC += $(S_PATH)my_printf.c
+SRC += $(S_PATH)function.c
+SRC += $(S_PATH)ft_putchar_fd.c
+SRC += $(S_PATH)ft_putnbr.c
+SRC += $(S_PATH)ft_putnbr_fd.c
+
 
 # Objects and Headers
 
@@ -93,7 +112,7 @@ COMPL = $(C_GCC) -c -I$(H_PATH)
 BUILD = $(PATHS)
 AR_RC = ar rc
 RANLI = ranlib
-CFLAG = -Wall -Wextra -Werror
+CFLAG = -Wall -Wextra #  -Werror
 RM_RF = /bin/rm -rf
 MKDIR = mkdir -p
 NORME = norminette

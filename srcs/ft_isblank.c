@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_blank.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 10:46:04 by arsciand          #+#    #+#             */
-/*   Updated: 2019/07/09 10:47:43 by arsciand         ###   ########.fr       */
+/*   Created: 2019/01/30 18:46:06 by fcatusse          #+#    #+#             */
+/*   Updated: 2019/07/19 11:50:34 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "shared_libft.h"
+# include "shared_libft.h"
 
-uint8_t		ft_strequ(const char *s1, const char *s2)
+int		ft_isblank(int c)
 {
-	return (s1 && s2 && ft_strcmp(s1, s2) == 0 ? 1 : 0);
+	return (c == ' ' || c == '\n' || c == '\t');
 }

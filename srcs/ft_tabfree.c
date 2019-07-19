@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_tabfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 10:46:04 by arsciand          #+#    #+#             */
-/*   Updated: 2019/07/09 10:47:43 by arsciand         ###   ########.fr       */
+/*   Created: 2019/03/22 18:26:20 by fcatusse          #+#    #+#             */
+/*   Updated: 2019/07/19 11:46:10 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "shared_libft.h"
+# include "shared_libft.h"
 
-uint8_t		ft_strequ(const char *s1, const char *s2)
+void		ft_tabfree(char **array)
 {
-	return (s1 && s2 && ft_strcmp(s1, s2) == 0 ? 1 : 0);
+	int		i;
+
+	i = -1;
+	if (array)
+	{
+		while (array[++i])
+			ft_strdel(&array[i]);
+		free(array);
+		array = NULL;
+	}
 }

@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoinf.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 10:46:40 by arsciand          #+#    #+#             */
-/*   Updated: 2019/07/09 11:05:57 by arsciand         ###   ########.fr       */
+/*   Created: 2018/11/06 16:06:12 by fcatusse          #+#    #+#             */
+/*   Updated: 2019/07/19 12:38:57 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-char	*ft_strjoinf(char *s1, char *s2, uint8_t vars)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
+	long nb;
 
-	str = ft_strjoin(s1, s2);
-	if (vars == 0)
-		return (str);
-	else if (vars == 1)
-		free(s1);
-	else if (vars == 2)
-		free(s2);
-	else
+	nb = (int)n;
+	if (nb < 0)
 	{
-		free(s1);
-		free(s2);
+		ft_putchar_fd('-', fd);
+		nb = -nb;
 	}
-	return (str);
+	if (nb > 9)
+		ft_putnbr_fd(nb / 10, fd);
+	ft_putchar_fd(nb % 10 + '0', fd);
 }

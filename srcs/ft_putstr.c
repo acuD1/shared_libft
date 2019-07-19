@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoinf.c                                      :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 10:46:40 by arsciand          #+#    #+#             */
-/*   Updated: 2019/07/09 11:05:57 by arsciand         ###   ########.fr       */
+/*   Created: 2018/11/06 16:05:44 by fcatusse          #+#    #+#             */
+/*   Updated: 2019/07/19 12:18:45 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-char	*ft_strjoinf(char *s1, char *s2, uint8_t vars)
+void	ft_putstr(char const *s)
 {
-	char	*str;
-
-	str = ft_strjoin(s1, s2);
-	if (vars == 0)
-		return (str);
-	else if (vars == 1)
-		free(s1);
-	else if (vars == 2)
-		free(s2);
-	else
-	{
-		free(s1);
-		free(s2);
-	}
-	return (str);
+	ft_putstr_fd(s, 1);
 }

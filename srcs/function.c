@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoinf.c                                      :+:      :+:    :+:   */
+/*   function.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 10:46:40 by arsciand          #+#    #+#             */
-/*   Updated: 2019/07/09 11:05:57 by arsciand         ###   ########.fr       */
+/*   Created: 2019/03/15 11:59:32 by fcatusse          #+#    #+#             */
+/*   Updated: 2019/07/19 12:30:26 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-char	*ft_strjoinf(char *s1, char *s2, uint8_t vars)
+void	fun_c(va_list *ap)
 {
-	char	*str;
+	ft_putchar(va_arg(*ap, int));
+}
 
-	str = ft_strjoin(s1, s2);
-	if (vars == 0)
-		return (str);
-	else if (vars == 1)
-		free(s1);
-	else if (vars == 2)
-		free(s2);
-	else
-	{
-		free(s1);
-		free(s2);
-	}
-	return (str);
+void	fun_s(va_list *ap)
+{
+	ft_putstr(va_arg(*ap, char*));
+}
+
+void	fun_d(va_list *ap)
+{
+	ft_putnbr(va_arg(*ap, int));
 }

@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2019/07/18 14:10:43 by arsciand         ###   ########.fr       */
+/*   Updated: 2019/07/19 12:39:36 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,17 @@
 
 # include <string.h>
 # include <stdlib.h>
+# include <stdarg.h>
+# include <unistd.h>
 
 /*
 **		Structures
 */
+typedef struct		s_printf
+{
+	int		flag;
+	void		(*f)(va_list*);
+}					t_printf;	
 
 typedef struct		s_lst
 {
@@ -36,7 +43,10 @@ typedef struct		s_lst
 
 int32_t				ft_atoi(const char *s);
 void				ft_bzero(void *s, size_t n);
-void				ft_tabdel(char ***tab);
+char				**ft_tabcopy(char **tab_dest, char **tab_copy);
+void				ft_tabfree(char **array);
+int					ft_tablen(char **array);
+void				ft_tabdel(char ***array);
 char				*ft_itoa(int32_t n);
 size_t				ft_lstlen(t_lst *lst);
 t_lst				*ft_lstnew(const void *content, size_t content_size);
@@ -51,13 +61,30 @@ int32_t				ft_strcmp(const char *s1, const char *s2);
 char				*ft_strcpy(char *dst, const char *s);
 void				ft_strdel(char **as);
 char				*ft_strdup(const char *s);
-u_int8_t			ft_strequ(const char *s1, const char *s2);
+uint8_t				ft_strequ(const char *s1, const char *s2);
 char				*ft_strjoin(const char *s1, const char *s2);
-char				*ft_strjoinf(char *s1, char *s2, u_int8_t vars);
+char				*ft_strjoinf(char *s1, char *s2, uint8_t vars);
 size_t				ft_strlen(const char *s);
 char				*ft_strnew(size_t size);
 char				**ft_strsplit(const char *s, char *charset);
 char				*ft_strsub(const char *s, unsigned int start, size_t len);
 int32_t				ft_getnextline(const int fd, char **line);
+char				**ft_split(char *s);
+int					ft_isblank(int c);
+void				ft_putchar(char c);
+int					ft_isdigit(int c);
+void				ft_putendl_fd(char const *s, int fd);
+void				ft_putstr(char const *s);
+void				ft_putstr_fd(char const *s, int fd);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
+char				*ft_strrchr(const char *s, int c);
+int					is_print(int c);
+void				my_printf(char *format, ...);
+void	fun_c(va_list *ap);
+void	fun_s(va_list *ap);
+void	fun_d(va_list *ap);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putnbr(int n);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
