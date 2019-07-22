@@ -61,7 +61,7 @@ int32_t				ft_strcmp(const char *s1, const char *s2);
 char				*ft_strcpy(char *dst, const char *s);
 void				ft_strdel(char **as);
 char				*ft_strdup(const char *s);
-uint8_t				ft_strequ(const char *s1, const char *s2);
+u_int8_t				ft_strequ(const char *s1, const char *s2);
 char				*ft_strjoin(const char *s1, const char *s2);
 char				*ft_strjoinf(char *s1, char *s2, u_int8_t vars);
 size_t				ft_strlen(const char *s);
