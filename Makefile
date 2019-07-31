@@ -98,6 +98,7 @@ SRC += $(S_PATH)function.c
 SRC += $(S_PATH)ft_putchar_fd.c
 SRC += $(S_PATH)ft_putnbr.c
 SRC += $(S_PATH)ft_putnbr_fd.c
+SRC += $(S_PATH)isstart.c
 
 
 # Objects and Headers
