@@ -108,7 +108,7 @@ HDR = $(H_PATH)$(HNAME)
 
 # Variables
 
-C_GCC = gcc
+C_GCC = clang
 COMPL = $(C_GCC) -c -I$(H_PATH)
 BUILD = $(PATHS)
 AR_RC = ar rc

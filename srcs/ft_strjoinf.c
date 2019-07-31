@@ -12,7 +12,7 @@
 
 #include "shared_libft.h"
 
-char	*ft_strjoinf(char *s1, char *s2, uint8_t vars)
+char	*ft_strjoinf(char *s1, char *s2, u_int8_t vars)
 {
 	char	*str;
 
