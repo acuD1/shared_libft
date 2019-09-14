@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2019/07/31 12:22:35 by fcatusse         ###   ########.fr       */
+/*   Updated: 2019/09/14 14:33:03 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct		s_lst
 	void			*content;
 	size_t			content_size;
 	struct s_lst	*next;
+	struct s_lst	*prev;
 }					t_lst;
 
 /*
