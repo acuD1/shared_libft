@@ -6,18 +6,18 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 14:21:59 by arsciand          #+#    #+#             */
-/*   Updated: 2019/07/07 14:23:37 by arsciand         ###   ########.fr       */
+/*   Updated: 2019/09/18 15:28:42 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-void		ft_lstappend(t_lst **alst, t_lst *new)
+t_lst	*ft_lstappend(t_lst **alst, t_lst *new)
 {
 	t_lst	*node;
 
 	if (!new)
-		return ;
+		return (NULL);
 	node = *alst;
 	if (node)
 	{
@@ -27,4 +27,5 @@ void		ft_lstappend(t_lst **alst, t_lst *new)
 	}
 	else
 		*alst = new;
+	return (new);
 }

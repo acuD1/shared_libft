@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2019/09/18 15:20:59 by guvillat         ###   ########.fr       */
+/*   Updated: 2019/09/18 15:29:16 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void				ft_tabdel(char ***array);
 char				*ft_itoa(int32_t n);
 size_t				ft_lstlen(t_lst *lst);
 t_lst				*ft_lstnew(const void *content, size_t content_size);
-void				ft_lstappend(t_lst **alst, t_lst *new);
+t_lst				*ft_lstappend(t_lst **alst, t_lst *new);
 void				*ft_memalloc(size_t size);
 void				*ft_memcpy(void *dst, const void *s, size_t n);
 void				*ft_memset(void *s, int32_t c, size_t len);
