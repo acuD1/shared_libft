@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fcatusse <fcatusse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 10:36:45 by arsciand          #+#    #+#             */
-/*   Updated: 2019/09/09 16:55:08 by fcatusse         ###   ########.fr       */
+/*   Created: 2019/09/09 15:34:41 by fcatusse          #+#    #+#             */
+/*   Updated: 2019/09/09 15:34:47 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-char	*ft_strcpy(char *dst, const char *s)
+char	*ft_strncpy(char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	while (s && s[i])
+	while (s2[i] && i < n)
 	{
-		dst[i] = s[i];
+		s1[i] = s2[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	while (i < n)
+	{
+		s1[i] = '\0';
+		i++;
+	}
+	return (s1);
 }

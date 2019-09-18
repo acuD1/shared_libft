@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   function.c                                         :+:      :+:    :+:   */
+/*   strlen_to.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/15 11:59:32 by fcatusse          #+#    #+#             */
-/*   Updated: 2019/07/19 12:30:26 by fcatusse         ###   ########.fr       */
+/*   Created: 2019/04/08 11:41:04 by fcatusse          #+#    #+#             */
+/*   Updated: 2019/09/09 15:32:23 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-void	fun_c(va_list *ap)
+size_t		strlen_to(const char *s, char c)
 {
-	ft_putchar(va_arg(*ap, int));
-}
+	int		i;
 
-void	fun_s(va_list *ap)
-{
-	ft_putstr(va_arg(*ap, char*));
-}
-
-void	fun_d(va_list *ap)
-{
-	ft_putnbr(va_arg(*ap, int));
+	i = -1;
+	while (s[++i])
+		if (s[i] == c)
+			return (i);
+	return (i);
 }

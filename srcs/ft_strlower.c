@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlower.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 10:36:45 by arsciand          #+#    #+#             */
-/*   Updated: 2019/09/09 16:55:08 by fcatusse         ###   ########.fr       */
+/*   Created: 2018/11/09 13:34:40 by guvillat          #+#    #+#             */
+/*   Updated: 2018/11/09 13:34:58 by guvillat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "shared_libft.h"
+#include "../includes/ft_printf.h"
 
-char	*ft_strcpy(char *dst, const char *s)
+void	*ft_strlower(char *s)
 {
-	size_t	i;
+	int i;
 
 	i = 0;
-	while (s && s[i])
+	while (s[i] != '\0')
 	{
-		dst[i] = s[i];
+		if (s[i] >= 'A' && s[i] <= 'Z')
+			s[i] = ft_tolower(s[i]);
 		i++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	return (s);
 }
