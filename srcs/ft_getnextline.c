@@ -28,7 +28,7 @@ static int	check_line(char **stack)
 
 static int	init(const int fd, char **line, char *buff, char **stack)
 {
-	if (fd == -1 || FD_MAXSET > 4864 || BUFF_SIZE < 1
+	if (fd == -1 || FD_MAXSET > 4864 || BUFF_SZ < 1
 			|| !line || read(fd, buff, 0))
 		return (0);
 	if (!(stack[fd]))
@@ -44,9 +44,9 @@ int32_t		ft_getnextline(const int fd, char **line)
 	char		*tmp;
 	int32_t		ret;
 
-	if (!(buff = ft_memalloc(BUFF_SIZE + 1)) || (!init(fd, line, buff, stack)))
+	if (!(buff = ft_memalloc(BUFF_SZ + 1)) || (!init(fd, line, buff, stack)))
 		return (-1);
-	while (!(check_line(&stack[fd])) && (ret = read(fd, buff, BUFF_SIZE)))
+	while (!(check_line(&stack[fd])) && (ret = read(fd, buff, BUFF_SZ)))
 	{
 		buff[ret] = '\0';
 		tmp = stack[fd];

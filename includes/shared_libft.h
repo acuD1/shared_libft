@@ -13,7 +13,7 @@
 #ifndef SHARED_LIBFT_H
 # define SHARED_LIBFT_H
 
-# define BUFF_SIZE 4096
+# define BUFF_SZ 4096
 # define FD_MAXSET 4864
 
 # include <string.h>
