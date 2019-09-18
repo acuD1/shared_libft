@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2019/09/14 14:33:03 by arsciand         ###   ########.fr       */
+/*   Updated: 2019/09/18 15:20:59 by guvillat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,5 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr(int n);
 void	ft_putnbr_fd(int n, int fd);
 int			isstart(char *s1, char *s2);
-
+char	*ft_strstr(const char *big, const char *little);	
 #endif
