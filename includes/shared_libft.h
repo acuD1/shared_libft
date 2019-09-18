@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2019/09/18 15:29:16 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2019/09/18 17:37:07 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void				ft_tabfree(char **array);
 int					ft_tablen(char **array);
 void				ft_tabdel(char ***array);
 char				*ft_itoa(int32_t n);
+int8_t				ft_itoabuf(int number, char *buffer);
 size_t				ft_lstlen(t_lst *lst);
 t_lst				*ft_lstnew(const void *content, size_t content_size);
 t_lst				*ft_lstappend(t_lst **alst, t_lst *new);

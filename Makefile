@@ -60,6 +60,7 @@ SRC += $(S_PATH)ft_bzero.c
 SRC += $(S_PATH)ft_strstr.c
 SRC += $(S_PATH)ft_getnextline.c
 SRC += $(S_PATH)ft_itoa.c
+SRC += $(S_PATH)ft_itoabuf.c
 SRC += $(S_PATH)ft_lstappend.c
 SRC += $(S_PATH)ft_lstlen.c
 SRC += $(S_PATH)ft_lstnew.c
