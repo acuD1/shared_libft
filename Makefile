@@ -57,6 +57,7 @@ PATHS = $(O_PATH) $(B_PATH)
 
 SRC += $(S_PATH)ft_atoi.c
 SRC += $(S_PATH)ft_bzero.c
+SRC += $(S_PATH)ft_strstr.c
 SRC += $(S_PATH)ft_getnextline.c
 SRC += $(S_PATH)ft_itoa.c
 SRC += $(S_PATH)ft_lstappend.c
