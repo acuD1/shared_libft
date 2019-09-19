@@ -14,7 +14,7 @@
 # define FT_PRINTF_H
 # define PF t_printf
 # define SPE t_spec
-# define BUFF_MAX 128
+# define BUFF_MAX 512
 # define BLK "\033[22;30m"
 # define RGE "\033[22;31m"
 # define GRN "\033[22;32m"
@@ -31,7 +31,7 @@
 # define LMGT "\033[01;35m"
 # define LCYA "\033[01;36m"
 # define RST "\033[01;37m"
-# include "../libft/libft.h"
+# include "shared_libft.h"
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>

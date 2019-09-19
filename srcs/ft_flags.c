@@ -39,14 +39,13 @@ int		ft_check_precision(PF *argument, va_list ap)
 {
 	int		i;
 	char	*str;
-	int		wild;
 
 	if (argument->format[argument->index] == '.')
 	{
-		i = ++argument->index;
+		argument->index++;
 		argument->flags[0] = 0;
 		if (argument->format[argument->index] == '*')
-			wild = ft_wildcard(argument, ap, 0);
+			ft_wildcard(argument, ap, 0);
 		i = argument->index;
 		while (ft_isdigit(argument->format[argument->index]))
 			argument->index++;

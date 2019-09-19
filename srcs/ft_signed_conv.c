@@ -47,7 +47,8 @@ static char			*test_string(PF *args)
 	{
 		if (!octal || (octal && !args->flags[2]))
 		{
-			args->arg = "\0";
+			free(args->arg);
+			args->arg = ft_strdup("\0");
 			return (args->arg);
 		}
 	}
@@ -57,21 +58,14 @@ static char			*test_string(PF *args)
 int					signed_handler(PF *argument, va_list ap)
 {
 	intmax_t	n;
-	char		*tmp;
 
 	n = (argument->spec == 'd' || argument->spec == 'i') ?
 	signed_cast(argument, ap) : (long int)va_arg(ap, intmax_t);
 	if (n >= 0)
-	{
-		tmp = ft_itoa_base(n, 10);
-		argument->arg = tmp;
-		free(tmp);
-	}
+		argument->arg = ft_itoa_base(n, 10);
 	else if (n < 0)
 	{
-		tmp = ft_itoa_base(-n, 10);
-		argument->arg = tmp;
-		free(tmp);
+		argument->arg = ft_itoa_base(-n, 10);
 		return (ft_print_number(argument, "-"));
 	}
 	if (argument->flags[5])
@@ -86,8 +80,7 @@ static int			ft_print_number_bis(PF *argument, int padding)
 	ft_buff(argument->arg, argument);
 	if (argument->flags[4] == 1)
 		ft_nputchar(' ', padding, argument);
-	if (argument->flags[0] && argument->spec == 'f')
-		free(argument->arg);
+	free(argument->arg);
 	return (0);
 }
 

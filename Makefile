@@ -99,6 +99,23 @@ SRC += $(S_PATH)ft_putchar_fd.c
 SRC += $(S_PATH)ft_putnbr.c
 SRC += $(S_PATH)ft_putnbr_fd.c
 SRC += $(S_PATH)isstart.c
+SRC += $(S_PATH)ft_char_conv.c
+SRC += $(S_PATH)ft_flags.c
+SRC += $(S_PATH)ft_float_conv.c
+SRC += $(S_PATH)ft_memory.c
+SRC += $(S_PATH)ft_itoa_base.c
+SRC += $(S_PATH)ft_printf.c
+SRC += $(S_PATH)ft_signed_conv.c
+SRC += $(S_PATH)ft_str_conv.c
+SRC += $(S_PATH)ft_unsigned_conv.c
+SRC += $(S_PATH)ft_nputchar.c
+SRC += $(S_PATH)ft_strlower.c
+SRC += $(S_PATH)ft_wstrtostr.c
+SRC += $(S_PATH)ft_wstrlen.c
+SRC += $(S_PATH)ft_wchartostr.c
+SRC += $(S_PATH)ft_wcharlen.c
+SRC += $(S_PATH)ft_strncat.c
+SRC += $(S_PATH)ft_tolower.c
 
 
 # Objects and Headers

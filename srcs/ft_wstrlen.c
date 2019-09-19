@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_wstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 13:38:06 by guvillat          #+#    #+#             */
-/*   Updated: 2018/11/09 13:38:08 by guvillat         ###   ########.fr       */
+/*   Created: 2019/01/23 15:13:53 by guvillat          #+#    #+#             */
+/*   Updated: 2019/01/23 15:13:55 by guvillat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*ft_strncat(char *dest, const char *src, size_t n)
+size_t		ft_wstrlen(wchar_t *ws)
 {
-	int i;
-	int j;
+	size_t	len;
 
-	i = ft_strlen(dest);
-	j = 0;
-	while (src[j] && n)
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-		n--;
-	}
-	dest[i] = '\0';
-	return (dest);
+	len = 0;
+	if (!ws)
+		return (0);
+	while (*(ws++))
+		len++;
+	return (len);
 }

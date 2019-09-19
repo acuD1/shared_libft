@@ -20,15 +20,16 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <unistd.h>
+# include "ft_printf.h"
 
 /*
 **		Structures
 */
-typedef struct		s_printf
-{
-	int		flag;
-	void		(*f)(va_list*);
-}					t_printf;	
+// typedef struct		s_printf
+// {
+// 	int		flag;
+// 	void		(*f)(va_list*);
+// }					t_printf;	
 
 typedef struct		s_lst
 {
@@ -82,12 +83,14 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strrchr(const char *s, int c);
 int					is_print(int c);
 void				my_printf(char *format, ...);
-void	fun_c(va_list *ap);
-void	fun_s(va_list *ap);
-void	fun_d(va_list *ap);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putnbr(int n);
-void	ft_putnbr_fd(int n, int fd);
-int			isstart(char *s1, char *s2);
-char	*ft_strstr(const char *big, const char *little);	
+void				fun_c(va_list *ap);
+void				fun_s(va_list *ap);
+void				fun_d(va_list *ap);
+void				ft_putchar_fd(char c, int fd);
+void				ft_putnbr(int n);
+void				ft_putnbr_fd(int n, int fd);
+int					isstart(char *s1, char *s2);
+char				*ft_strstr(const char *big, const char *little);
+char				*ft_strncat(char *s1, const char *s2, size_t n);
+int					ft_tolower(int c);
 #endif
