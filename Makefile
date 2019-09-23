@@ -104,6 +104,8 @@ SRC += $(S_PATH)isstart.c
 SRC += $(S_PATH)ft_itoa_base.c
 SRC += $(S_PATH)ft_strncat.c
 SRC += $(S_PATH)ft_tolower.c
+SRC += $(S_PATH)ft_strlower.c
+SRC += $(S_PATH)ft_strsub_free.c
 
 SRC += $(S_PATH)$(PRINTF)ft_printf.c
 SRC += $(S_PATH)$(PRINTF)char_conv.c
@@ -119,6 +121,7 @@ SRC += $(S_PATH)$(PRINTF)ft_wchartostr.c
 SRC += $(S_PATH)$(PRINTF)ft_wstrlen.c
 SRC += $(S_PATH)$(PRINTF)ft_wstrsub.c
 SRC += $(S_PATH)$(PRINTF)ft_wstrtostr.c
+SRC += $(S_PATH)$(PRINTF)ft_dprintf.c
 
 # Objects and Headers
 

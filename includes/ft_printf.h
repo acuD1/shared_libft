@@ -65,6 +65,7 @@ struct				s_printf
 	char			*arg;
 	wchar_t			*warg;
 	int				ret;
+	int				fd;
 };
 
 struct				s_spec
@@ -73,6 +74,7 @@ struct				s_spec
 };
 
 int					ft_printf(const char *format, ...);
+int					ft_dprintf(int fd, const char *format, ...);
 
 /*
 ** DISPLAY
@@ -135,5 +137,6 @@ int					ft_check_precision(PF *argument, va_list ap);
 void				ft_check_length(PF *argu);
 int					ft_check_spec(PF *argument);
 int					ft_check_spec_bis(PF *argument);
+int					ft_check_format(char *str, PF *argument, va_list ap);
 
 #endif
