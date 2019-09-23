@@ -38,7 +38,7 @@
 # include <stdlib.h>
 # include <wchar.h>
 # include "shared_libft.h"
-
+7
 char				g_buff[BUFF_MAX];
 int					g_i;
 
