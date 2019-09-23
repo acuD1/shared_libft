@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   isstart.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 17:18:53 by fcatusse          #+#    #+#             */
-/*   Updated: 2019/07/31 12:21:55 by fcatusse         ###   ########.fr       */
+/*   Updated: 2019/09/23 10:01:13 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "shared_libft.h"
+#include "shared_libft.h"
 
 int			isstart(char *s1, char *s2)
 {

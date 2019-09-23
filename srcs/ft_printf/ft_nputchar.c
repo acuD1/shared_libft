@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wstrlen.c                                       :+:      :+:    :+:   */
+/*   ft_nputchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/23 15:13:53 by guvillat          #+#    #+#             */
-/*   Updated: 2019/01/23 15:13:55 by guvillat         ###   ########.fr       */
+/*   Created: 2019/01/23 15:12:13 by guvillat          #+#    #+#             */
+/*   Updated: 2019/09/23 14:09:36 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
-size_t		ft_wstrlen(wchar_t *ws)
+void		ft_nputchar(char c, ssize_t n, PF *argument)
 {
-	size_t	len;
+	ssize_t	i;
+	char	s[2];
 
-	len = 0;
-	if (!ws)
-		return (0);
-	while (*(ws++))
-		len++;
-	return (len);
+	s[0] = c;
+	s[1] = '\0';
+	i = 0;
+	while (i < n)
+	{
+		ft_buff(s, argument);
+		i++;
+	}
 }

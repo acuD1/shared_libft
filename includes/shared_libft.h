@@ -6,30 +6,22 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2019/09/18 17:37:07 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2019/09/23 15:07:45 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHARED_LIBFT_H
 # define SHARED_LIBFT_H
 
-# define BUFF_SZ 4096
-# define FD_MAXSET 4864
+# define BUFF_SZ	4096
+# define FD_MAXSET	4864
 
 # include <string.h>
 # include <stdlib.h>
 # include <stdarg.h>
 # include <unistd.h>
+# include <stdint.h>
 # include "ft_printf.h"
-
-/*
-**		Structures
-*/
-// typedef struct		s_printf
-// {
-// 	int		flag;
-// 	void		(*f)(va_list*);
-// }					t_printf;	
 
 typedef struct		s_lst
 {
@@ -50,6 +42,7 @@ void				ft_tabfree(char **array);
 int					ft_tablen(char **array);
 void				ft_tabdel(char ***array);
 char				*ft_itoa(int32_t n);
+char				*ft_itoa_base(uintmax_t nbr, int base);
 int8_t				ft_itoabuf(int number, char *buffer);
 size_t				ft_lstlen(t_lst *lst);
 t_lst				*ft_lstnew(const void *content, size_t content_size);
@@ -64,15 +57,17 @@ int32_t				ft_strcmp(const char *s1, const char *s2);
 char				*ft_strcpy(char *dst, const char *s);
 void				ft_strdel(char **as);
 char				*ft_strdup(const char *s);
-u_int8_t				ft_strequ(const char *s1, const char *s2);
+u_int8_t			ft_strequ(const char *s1, const char *s2);
 char				*ft_strjoin(const char *s1, const char *s2);
 char				*ft_strjoinf(char *s1, char *s2, u_int8_t vars);
 size_t				ft_strlen(const char *s);
+void				*ft_strlower(char *s);
 char				*ft_strnew(size_t size);
 char				**ft_strsplit(const char *s, char *charset);
 char				*ft_strsub(const char *s, unsigned int start, size_t len);
+char				*ft_strsub_free(char const *s, unsigned int start,
+						size_t len);
 int32_t				ft_getnextline(const int fd, char **line);
-char				**ft_split(char *s);
 int					ft_isblank(int c);
 void				ft_putchar(char c);
 int					ft_isdigit(int c);
@@ -93,4 +88,5 @@ int					isstart(char *s1, char *s2);
 char				*ft_strstr(const char *big, const char *little);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 int					ft_tolower(int c);
+
 #endif

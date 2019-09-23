@@ -42,7 +42,6 @@ C_C = \033[0;36
 # Programms names
 
 NAME = shared_libft.a
-HNAME = shared_libft.h
 
 # Dir/Files Path
 
@@ -51,7 +50,11 @@ H_PATH = includes/
 B_PATH = build/
 O_PATH = build/objs/
 
-PATHS = $(O_PATH) $(B_PATH)
+PRINTF = ft_printf/
+
+PATHS += $(B_PATH)
+PATHS += $(O_PATH)
+PATHS += $(O_PATH)$(PRINTF)
 
 # Files
 
@@ -85,7 +88,6 @@ SRC += $(S_PATH)ft_tabdel.c
 SRC += $(S_PATH)ft_tablen.c
 SRC += $(S_PATH)ft_tabcopy.c
 SRC += $(S_PATH)ft_tabfree.c
-SRC += $(S_PATH)ft_split.c
 SRC += $(S_PATH)ft_isblank.c
 SRC += $(S_PATH)ft_putchar.c
 SRC += $(S_PATH)ft_isdigit.c
@@ -99,29 +101,32 @@ SRC += $(S_PATH)ft_putchar_fd.c
 SRC += $(S_PATH)ft_putnbr.c
 SRC += $(S_PATH)ft_putnbr_fd.c
 SRC += $(S_PATH)isstart.c
-SRC += $(S_PATH)ft_char_conv.c
-SRC += $(S_PATH)ft_flags.c
-SRC += $(S_PATH)ft_float_conv.c
-SRC += $(S_PATH)ft_memory.c
 SRC += $(S_PATH)ft_itoa_base.c
-SRC += $(S_PATH)ft_printf.c
-SRC += $(S_PATH)ft_signed_conv.c
-SRC += $(S_PATH)ft_str_conv.c
-SRC += $(S_PATH)ft_unsigned_conv.c
-SRC += $(S_PATH)ft_nputchar.c
-SRC += $(S_PATH)ft_strlower.c
-SRC += $(S_PATH)ft_wstrtostr.c
-SRC += $(S_PATH)ft_wstrlen.c
-SRC += $(S_PATH)ft_wchartostr.c
-SRC += $(S_PATH)ft_wcharlen.c
 SRC += $(S_PATH)ft_strncat.c
 SRC += $(S_PATH)ft_tolower.c
 
+SRC += $(S_PATH)$(PRINTF)ft_printf.c
+SRC += $(S_PATH)$(PRINTF)char_conv.c
+SRC += $(S_PATH)$(PRINTF)flags_handler.c
+SRC += $(S_PATH)$(PRINTF)float_conv.c
+SRC += $(S_PATH)$(PRINTF)memory_handler.c
+SRC += $(S_PATH)$(PRINTF)ft_nputchar.c
+SRC += $(S_PATH)$(PRINTF)signed_conv.c
+SRC += $(S_PATH)$(PRINTF)str_conv.c
+SRC += $(S_PATH)$(PRINTF)unsigned_conv.c
+SRC += $(S_PATH)$(PRINTF)ft_wcharlen.c
+SRC += $(S_PATH)$(PRINTF)ft_wchartostr.c
+SRC += $(S_PATH)$(PRINTF)ft_wstrlen.c
+SRC += $(S_PATH)$(PRINTF)ft_wstrsub.c
+SRC += $(S_PATH)$(PRINTF)ft_wstrtostr.c
 
 # Objects and Headers
 
+HDR += shared_libft.h
+HDR += ft_printf.h
+
 OBJ = $(patsubst $(S_PATH)%.c, $(O_PATH)%.o, $(SRC))
-HDR = $(H_PATH)$(HNAME)
+vpath %.h $(H_PATH)
 
 # Variables
 

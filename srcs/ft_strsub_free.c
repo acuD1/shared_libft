@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlower.c                                      :+:      :+:    :+:   */
+/*   ft_strsub_free.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 13:34:40 by guvillat          #+#    #+#             */
-/*   Updated: 2019/09/23 15:07:54 by arsciand         ###   ########.fr       */
+/*   Created: 2019/09/23 14:07:30 by arsciand          #+#    #+#             */
+/*   Updated: 2019/09/23 14:07:45 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-void	*ft_strlower(char *s)
+char	*ft_strsub_free(char const *s, unsigned int start, size_t len)
 {
-	int i;
+	char	*fresh;
+	char	*tmp;
+	int		i;
 
+	tmp = NULL;
+	if (!s)
+		return (NULL);
+	tmp = (char*)s;
+	if (!(fresh = malloc((len + 1) * sizeof(char))))
+		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	if (!fresh)
+		return (NULL);
+	fresh[len] = '\0';
+	while (len > 0)
 	{
-		if (s[i] >= 'A' && s[i] <= 'Z')
-			s[i] = ft_tolower(s[i]);
+		fresh[i] = s[start];
 		i++;
+		start++;
+		len--;
 	}
-	return (s);
+	free(tmp);
+	return (fresh);
 }

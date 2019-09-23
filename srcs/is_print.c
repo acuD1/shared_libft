@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   is_print.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 12:20:14 by fcatusse          #+#    #+#             */
-/*   Updated: 2019/07/19 12:20:22 by fcatusse         ###   ########.fr       */
+/*   Updated: 2019/09/23 10:01:44 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "shared_libft.h"
+#include "shared_libft.h"
 
 int	is_print(int c)
 {

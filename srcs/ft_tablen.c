@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tablen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 12:15:49 by fcatusse          #+#    #+#             */
-/*   Updated: 2019/07/19 11:44:51 by fcatusse         ###   ########.fr       */
+/*   Updated: 2019/09/23 13:52:58 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "shared_libft.h"
+#include "shared_libft.h"
 
-int			ft_tablen(char **array)
+int		ft_tablen(char **array)
 {
 	int		i;
 	int		count;

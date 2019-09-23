@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 13:38:06 by guvillat          #+#    #+#             */
-/*   Updated: 2018/11/09 13:38:08 by guvillat         ###   ########.fr       */
+/*   Updated: 2019/09/23 14:27:26 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "shared_libft.h"
 
 char	*ft_strncat(char *dest, const char *src, size_t n)
 {

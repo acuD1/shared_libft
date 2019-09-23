@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_wcharlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:13:31 by guvillat          #+#    #+#             */
-/*   Updated: 2019/01/23 15:13:32 by guvillat         ###   ########.fr       */
+/*   Updated: 2019/09/23 14:10:14 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int			ft_wcharlen(wchar_t wchar)
 {

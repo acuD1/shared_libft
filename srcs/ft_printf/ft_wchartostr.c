@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_wchartostr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:13:42 by guvillat          #+#    #+#             */
-/*   Updated: 2019/01/23 15:13:44 by guvillat         ###   ########.fr       */
+/*   Updated: 2019/09/23 14:10:20 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 static int		ft_wchartostr_bis(char *s, wchar_t wc)
 {
