@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2019/09/24 13:17:11 by fcatusse         ###   ########.fr       */
+/*   Updated: 2019/09/24 15:23:17 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ char				*ft_strstr(const char *big, const char *little);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 int					ft_tolower(int c);
 int					ft_isalpha(int c);
+size_t		strlen_to(const char *s, char c);
 
 #endif
