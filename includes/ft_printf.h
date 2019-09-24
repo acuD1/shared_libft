@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:26:05 by guvillat          #+#    #+#             */
-/*   Updated: 2019/09/23 14:31:13 by arsciand         ###   ########.fr       */
+/*   Updated: 2019/09/24 10:07:55 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 # include <stdlib.h>
 # include <wchar.h>
 # include "shared_libft.h"
-7
+
 char				g_buff[BUFF_MAX];
 int					g_i;
 
