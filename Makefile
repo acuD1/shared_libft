@@ -69,6 +69,7 @@ SRC += $(S_PATH)ft_lstlen.c
 SRC += $(S_PATH)ft_lstnew.c
 SRC += $(S_PATH)ft_memalloc.c
 SRC += $(S_PATH)ft_memcpy.c
+SRC += $(S_PATH)ft_memdel.c
 SRC += $(S_PATH)ft_memset.c
 SRC += $(S_PATH)ft_strcat.c
 SRC += $(S_PATH)ft_strchr.c
@@ -104,6 +105,7 @@ SRC += $(S_PATH)isstart.c
 SRC += $(S_PATH)ft_itoa_base.c
 SRC += $(S_PATH)ft_strncat.c
 SRC += $(S_PATH)ft_tolower.c
+SRC += $(S_PATH)get_options.c
 
 SRC += $(S_PATH)$(PRINTF)ft_printf.c
 SRC += $(S_PATH)$(PRINTF)char_conv.c
