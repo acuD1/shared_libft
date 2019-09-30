@@ -106,6 +106,8 @@ SRC += $(S_PATH)ft_itoa_base.c
 SRC += $(S_PATH)ft_strncat.c
 SRC += $(S_PATH)ft_tolower.c
 SRC += $(S_PATH)get_options.c
+SRC += $(S_PATH)ft_tabchr.c
+SRC += $(S_PATH)ft_isalnum.c
 
 SRC += $(S_PATH)$(PRINTF)ft_printf.c
 SRC += $(S_PATH)$(PRINTF)char_conv.c

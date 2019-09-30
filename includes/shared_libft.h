@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2019/09/29 00:24:37 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2019/09/30 05:10:43 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,7 @@ char				*ft_strncat(char *s1, const char *s2, size_t n);
 int					ft_tolower(int c);
 void				ft_memdel(void **ap);
 u_int64_t			get_options(int argc, char **argv, char *allowed);
+char				**ft_tabchr(char **tab, char *str);
+int8_t					ft_isalnum(int c);
 
 #endif
