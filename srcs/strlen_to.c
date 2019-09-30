@@ -6,7 +6,7 @@
 /*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 11:41:04 by fcatusse          #+#    #+#             */
-/*   Updated: 2019/09/09 15:32:23 by fcatusse         ###   ########.fr       */
+/*   Updated: 2019/09/30 18:41:04 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ size_t		strlen_to(const char *s, char c)
 	while (s[++i])
 		if (s[i] == c)
 			return (i);
-	return (i);
+	return (0);
 }
