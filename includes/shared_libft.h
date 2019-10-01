@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2019/10/01 19:22:24 by fcatusse         ###   ########.fr       */
+/*   Updated: 2019/10/01 19:25:14 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ size_t				ft_strclen(const char *s, int32_t c);
 char				*ft_strchr(const char *s, int32_t c);
 int32_t				ft_strcmp(const char *s1, const char *s2);
 char				*ft_strcpy(char *dst, const char *s);
-int					ft_strncpy(const char *s1, const char *s2, size_t n);
+char				*ft_strncpy(const char *s1, const char *s2, size_t n);
 void				ft_strdel(char **as);
 char				*ft_strdup(const char *s);
 u_int8_t			ft_strequ(const char *s1, const char *s2);
