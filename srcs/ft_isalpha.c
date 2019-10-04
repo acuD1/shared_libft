@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen_to.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 11:41:04 by fcatusse          #+#    #+#             */
-/*   Updated: 2019/09/30 19:39:50 by fcatusse         ###   ########.fr       */
+/*   Created: 2018/11/06 15:55:14 by fcatusse          #+#    #+#             */
+/*   Updated: 2019/09/24 13:16:53 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-size_t		strlen_to(const char *s, char c)
+int		ft_isalpha(int c)
 {
-	int		i;
-
-	i = -1;
-	while (s[++i])
-		if (s[i] == c)
-			return (i);
-	return (i);
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }

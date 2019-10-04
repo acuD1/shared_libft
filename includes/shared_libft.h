@@ -6,7 +6,11 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/09/30 05:10:43 by mpivet-p         ###   ########.fr       */
+=======
+/*   Updated: 2019/10/01 19:26:15 by fcatusse         ###   ########.fr       */
+>>>>>>> 338a95f038a2b0e3568332bddcdb51866916a86d
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +59,7 @@ size_t				ft_strclen(const char *s, int32_t c);
 char				*ft_strchr(const char *s, int32_t c);
 int32_t				ft_strcmp(const char *s1, const char *s2);
 char				*ft_strcpy(char *dst, const char *s);
+char				*ft_strncpy(char *s1, const char *s2, size_t n);
 void				ft_strdel(char **as);
 char				*ft_strdup(const char *s);
 u_int8_t			ft_strequ(const char *s1, const char *s2);
@@ -77,10 +82,6 @@ void				ft_putstr_fd(char const *s, int fd);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strrchr(const char *s, int c);
 int					is_print(int c);
-void				my_printf(char *format, ...);
-void				fun_c(va_list *ap);
-void				fun_s(va_list *ap);
-void				fun_d(va_list *ap);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
@@ -91,6 +92,8 @@ int					ft_tolower(int c);
 void				ft_memdel(void **ap);
 u_int64_t			get_options(int argc, char **argv, char *allowed);
 char				**ft_tabchr(char **tab, char *str);
-int8_t					ft_isalnum(int c);
+int8_t				ft_isalnum(int c);
+int					ft_isalpha(int c);
+size_t				strlen_to(const char *s, char c);
 
 #endif

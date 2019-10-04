@@ -14,7 +14,7 @@
 
 void			ft_display(PF *argument)
 {
-	argument->ret += write(1, &g_buff, g_i);
+	argument->ret += write(argument->fd, &g_buff, g_i);
 	ft_init_buff();
 }
 

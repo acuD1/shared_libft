@@ -75,7 +75,9 @@ SRC += $(S_PATH)ft_strcat.c
 SRC += $(S_PATH)ft_strchr.c
 SRC += $(S_PATH)ft_strclen.c
 SRC += $(S_PATH)ft_strcmp.c
+SRC += $(S_PATH)ft_strncmp.c
 SRC += $(S_PATH)ft_strcpy.c
+SRC += $(S_PATH)ft_strncpy.c
 SRC += $(S_PATH)ft_strdel.c
 SRC += $(S_PATH)ft_strdup.c
 SRC += $(S_PATH)ft_strequ.c
@@ -95,7 +97,6 @@ SRC += $(S_PATH)ft_isdigit.c
 SRC += $(S_PATH)ft_putendl_fd.c
 SRC += $(S_PATH)ft_putstr.c
 SRC += $(S_PATH)ft_putstr_fd.c
-SRC += $(S_PATH)ft_strncmp.c
 SRC += $(S_PATH)ft_strrchr.c
 SRC += $(S_PATH)is_print.c
 SRC += $(S_PATH)ft_putchar_fd.c
@@ -108,6 +109,10 @@ SRC += $(S_PATH)ft_tolower.c
 SRC += $(S_PATH)get_options.c
 SRC += $(S_PATH)ft_tabchr.c
 SRC += $(S_PATH)ft_isalnum.c
+SRC += $(S_PATH)ft_strlower.c
+SRC += $(S_PATH)ft_strsub_free.c
+SRC += $(S_PATH)ft_isalpha.c
+SRC += $(S_PATH)strlen_to.c
 
 SRC += $(S_PATH)$(PRINTF)ft_printf.c
 SRC += $(S_PATH)$(PRINTF)char_conv.c
@@ -123,6 +128,7 @@ SRC += $(S_PATH)$(PRINTF)ft_wchartostr.c
 SRC += $(S_PATH)$(PRINTF)ft_wstrlen.c
 SRC += $(S_PATH)$(PRINTF)ft_wstrsub.c
 SRC += $(S_PATH)$(PRINTF)ft_wstrtostr.c
+SRC += $(S_PATH)$(PRINTF)ft_dprintf.c
 
 # Objects and Headers
 
