@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2019/10/04 12:10:12 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:26:03 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct		s_lst
 	size_t			content_size;
 	struct s_lst	*next;
 	struct s_lst	*prev;
-}					t_lst;
+}			t_lst;
 
 /*
 **		Fonctions
@@ -91,5 +91,6 @@ char				**ft_tabchr(char **tab, char *str);
 int8_t				ft_isalnum(int c);
 int					ft_isalpha(int c);
 size_t				strlen_to(const char *s, char c);
+int				ft_decade(int nbr);
 
 #endif
