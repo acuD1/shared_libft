@@ -114,6 +114,7 @@ SRC += $(S_PATH)ft_strsub_free.c
 SRC += $(S_PATH)ft_isalpha.c
 SRC += $(S_PATH)strlen_to.c
 SRC += $(S_PATH)ft_decade.c
+SRC += $(S_PATH)is_number.c
 
 SRC += $(S_PATH)$(PRINTF)ft_printf.c
 SRC += $(S_PATH)$(PRINTF)char_conv.c

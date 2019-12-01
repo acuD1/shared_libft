@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2019/10/22 15:26:03 by fcatusse         ###   ########.fr       */
+/*   Updated: 2019/12/01 09:24:43 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ char				**ft_tabchr(char **tab, char *str);
 int8_t				ft_isalnum(int c);
 int					ft_isalpha(int c);
 size_t				strlen_to(const char *s, char c);
+int8_t				is_number(const char *s);
 int				ft_decade(int nbr);
 
 #endif
