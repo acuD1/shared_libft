@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 14:16:23 by arsciand          #+#    #+#             */
-/*   Updated: 2019/07/07 14:20:49 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/01/08 18:58:43 by guvillat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_lst	*ft_lstnew(const void *content, size_t content_size)
 		node->content = NULL;
 		node->content_size = 0;
 		node->next = NULL;
+		node->prev = NULL;
 		return (node);
 	}
 	if (!(elem = ft_memalloc(content_size)))
@@ -35,5 +36,6 @@ t_lst	*ft_lstnew(const void *content, size_t content_size)
 	node->content = elem;
 	node->content_size = content_size;
 	node->next = NULL;
+	node->prev = NULL;
 	return (node);
 }
