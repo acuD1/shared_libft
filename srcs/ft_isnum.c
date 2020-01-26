@@ -6,7 +6,7 @@
 /*   By: fcatusse <fcatusse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/26 17:35:57 by fcatusse          #+#    #+#             */
-/*   Updated: 2020/01/26 17:55:47 by fcatusse         ###   ########.fr       */
+/*   Updated: 2020/01/26 20:08:39 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ uint8_t		ft_isnum(char *str)
 	if (*str == '\0')
 		return (0);
 	if (*str == '-')
-		str++
+		str++;
 	while (*str != '\0')
 	{
 		if (ft_isdigit(*str) == 0)
