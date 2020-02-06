@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2019/12/01 09:24:43 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/02/06 18:50:39 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@
 # define BUFF_SZ	4096
 # define FD_MAXSET	4864
 
-# include <string.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdint.h>
 # include "ft_printf.h"
 
 typedef struct		s_lst
@@ -87,7 +82,7 @@ char				*ft_strncat(char *s1, const char *s2, size_t n);
 int					ft_tolower(int c);
 void				ft_memdel(void **ap);
 u_int64_t			get_options(int argc, char **argv, char *allowed);
-char				**ft_tabchr(char **tab, char *str);
+char				**ft_tabchr(char **tab_src, char *str);
 int8_t				ft_isalnum(int c);
 int					ft_isalpha(int c);
 size_t				strlen_to(const char *s, char c);
