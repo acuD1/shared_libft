@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstappend.c                                     :+:      :+:    :+:   */
+/*   ft_isnum.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fcatusse <fcatusse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/07 14:21:59 by arsciand          #+#    #+#             */
-/*   Updated: 2020/01/08 18:59:10 by guvillat         ###   ########.fr       */
+/*   Created: 2020/01/26 17:35:57 by fcatusse          #+#    #+#             */
+/*   Updated: 2020/01/26 20:08:39 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-t_lst	*ft_lstappend(t_lst **alst, t_lst *new)
+uint8_t		ft_isnum(char *str)
 {
-	t_lst	*node;
-
-	if (!new)
-		return (NULL);
-	node = *alst;
-	if (node)
+	if (str == NULL)
+		return (0);
+	if (*str == '\0')
+		return (0);
+	if (*str == '-')
+		str++;
+	while (*str != '\0')
 	{
-		while (node->next)
-			node = node->next;
-		node->next = new;
-		new->prev = node; 
+		if (ft_isdigit(*str) == 0)
+			return (0);
+		++str;
 	}
-	else
-		*alst = new;
-	return (new);
+	return (1);
 }

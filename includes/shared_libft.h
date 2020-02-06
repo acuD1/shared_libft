@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/02/06 18:50:39 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/02/06 20:53:53 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ int					ft_isalpha(int c);
 size_t				strlen_to(const char *s, char c);
 int8_t				is_number(const char *s);
 int				ft_decade(int nbr);
+uint8_t		ft_isnum(char *str);
 
 #endif

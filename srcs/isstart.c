@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 17:18:53 by fcatusse          #+#    #+#             */
-/*   Updated: 2019/09/23 10:01:13 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/01/04 19:47:23 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int			isstart(char *s1, char *s2)
 	int		i;
 
 	i = -1;
+	if (!*s2 || !*s1)
+		return (0);
 	while (s2[++i])
 		if (s1[i] != s2[i])
 			return (0);
