@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/02/07 01:36:17 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/02/07 05:00:35 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int					ft_isalpha(int c);
 int					ft_isblank(int c);
 int					ft_isdigit(int c);
 u_int8_t			ft_isnum(char *str);
-int					ft_isstart(char *s1, char *s2);
+int					ft_isstart(const char *s1, const char *s2);
 char				*ft_itoa_base(uintmax_t nbr, int base);
 char				*ft_itoa(int32_t n);
 int8_t				ft_itoabuf(int number, char *buffer);
