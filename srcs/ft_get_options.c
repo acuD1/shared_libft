@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_options.c                                      :+:      :+:    :+:   */
+/*   ft_get_options.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpivet-p <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/28 23:48:13 by mpivet-p          #+#    #+#             */
-/*   Updated: 2019/09/29 00:36:00 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/02/07 00:08:44 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 **	use (option & (1ULL << 3)) to catch
 */
 
-u_int64_t	get_options(int argc, char **argv, char *allowed)
+u_int64_t	ft_get_options(int argc, char **argv, char *allowed)
 {
 	u_int64_t	ret;
 	int			j;

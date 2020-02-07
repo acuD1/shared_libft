@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 16:26:34 by guvillat          #+#    #+#             */
-/*   Updated: 2019/09/23 16:26:37 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/02/07 00:11:42 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_dprintf(int fd, const char *format, ...)
 {
-	va_list ap;
+	va_list	ap;
 	PF		argument;
 
 	if (!format)

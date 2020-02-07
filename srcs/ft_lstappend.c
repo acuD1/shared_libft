@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 14:21:59 by arsciand          #+#    #+#             */
-/*   Updated: 2020/01/08 18:59:10 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/02/07 00:05:02 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_lst	*ft_lstappend(t_lst **alst, t_lst *new)
 		while (node->next)
 			node = node->next;
 		node->next = new;
-		new->prev = node; 
+		new->prev = node;
 	}
 	else
 		*alst = new;

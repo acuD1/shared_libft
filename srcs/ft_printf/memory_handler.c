@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:02 by guvillat          #+#    #+#             */
-/*   Updated: 2019/09/23 15:09:39 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/02/07 00:13:00 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 PF		*ft_init_argument(PF *argument)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (i < 13)
@@ -34,7 +34,7 @@ PF		*ft_init_argument(PF *argument)
 
 void	ft_init_spe_tab(SPE *spe)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (i < 128)
@@ -61,7 +61,7 @@ void	ft_init_spe_tab(SPE *spe)
 
 void	ft_init_buff(void)
 {
-	int n;
+	int		n;
 
 	n = 0;
 	while (n < BUFF_MAX)

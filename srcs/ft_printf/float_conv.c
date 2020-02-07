@@ -6,13 +6,13 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 14:42:32 by guvillat          #+#    #+#             */
-/*   Updated: 2019/09/23 15:11:02 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/02/07 00:11:32 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int				ft_wildcard(PF *argument, va_list ap, int i)
+int			ft_wildcard(PF *argument, va_list ap, int i)
 {
 	if (argument->format[argument->index] == '*')
 	{
@@ -36,7 +36,7 @@ int				ft_wildcard(PF *argument, va_list ap, int i)
 	return (1);
 }
 
-long double		ft_round(long double nbr, int precision)
+long double	ft_round(long double nbr, int precision)
 {
 	int			i;
 	long double	fl;
@@ -60,7 +60,7 @@ long double		ft_round(long double nbr, int precision)
 	return (nbr);
 }
 
-char			*ft_getipart(long double nf, PF *argument, int precision)
+char		*ft_getipart(long double nf, PF *argument, int precision)
 {
 	uintmax_t	curr;
 	char		*tmp;
@@ -85,7 +85,7 @@ char			*ft_getipart(long double nf, PF *argument, int precision)
 	return (argument->arg);
 }
 
-char			*ft_ftoa(long double nbr, PF *argument, int precision)
+char		*ft_ftoa(long double nbr, PF *argument, int precision)
 {
 	uintmax_t	digit;
 
@@ -106,7 +106,7 @@ char			*ft_ftoa(long double nbr, PF *argument, int precision)
 	return (argument->arg);
 }
 
-int				float_handler(PF *argument, va_list ap)
+int			float_handler(PF *argument, va_list ap)
 {
 	long double	n;
 	int			precision;

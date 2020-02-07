@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen_to.c                                        :+:      :+:    :+:   */
+/*   isstart.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 11:41:04 by fcatusse          #+#    #+#             */
-/*   Updated: 2019/09/30 19:39:50 by fcatusse         ###   ########.fr       */
+/*   Created: 2019/04/02 17:18:53 by fcatusse          #+#    #+#             */
+/*   Updated: 2020/02/07 00:09:13 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-size_t		strlen_to(const char *s, char c)
+int			ft_isstart(char *s1, char *s2)
 {
 	int		i;
 
 	i = -1;
-	while (s[++i])
-		if (s[i] == c)
-			return (i);
-	return (i);
+	if (!*s2 || !*s1)
+		return (0);
+	while (s2[++i])
+		if (s1[i] != s2[i])
+			return (0);
+	return (1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 13:42:24 by guvillat          #+#    #+#             */
-/*   Updated: 2019/09/18 15:17:16 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/02/07 00:18:06 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strstr(const char *big, const char *little)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	if (!*little)
 		return ((char*)big);

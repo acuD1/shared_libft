@@ -6,13 +6,13 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 13:56:01 by arsciand          #+#    #+#             */
-/*   Updated: 2019/07/07 13:58:23 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/02/07 00:16:20 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-size_t		ft_lstlen(t_lst *lst)
+size_t	ft_lstlen(t_lst *lst)
 {
 	t_lst	*node;
 	size_t	len;

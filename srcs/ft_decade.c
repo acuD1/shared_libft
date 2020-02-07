@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_decade.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fcatusse <fcatusse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 15:23:18 by fcatusse          #+#    #+#             */
-/*   Updated: 2019/10/22 15:24:15 by fcatusse         ###   ########.fr       */
+/*   Updated: 2020/02/07 00:15:07 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_decade(int nbr)
 {
-	int	size;
+	int		size;
 
 	size = 0;
 	while (nbr != 0)

@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strlen_to.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 16:05:20 by fcatusse          #+#    #+#             */
-/*   Updated: 2019/07/19 12:18:16 by fcatusse         ###   ########.fr       */
+/*   Created: 2019/04/08 11:41:04 by fcatusse          #+#    #+#             */
+/*   Updated: 2020/02/07 00:17:25 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+size_t	ft_strlen_to(const char *s, char c)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	int		i;
+
+	i = -1;
+	while (s[++i])
+		if (s[i] == c)
+			return (i);
+	return (i);
 }

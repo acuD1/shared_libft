@@ -6,15 +6,15 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:51 by guvillat          #+#    #+#             */
-/*   Updated: 2019/09/23 15:11:40 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/02/07 00:14:35 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static uintmax_t		unsigned_cast(PF *argument, va_list ap)
+static uintmax_t	unsigned_cast(PF *argument, va_list ap)
 {
-	uintmax_t			n;
+	uintmax_t	n;
 
 	n = va_arg(ap, uintmax_t);
 	if (argument->flags[7] == 1)
@@ -34,10 +34,10 @@ static uintmax_t		unsigned_cast(PF *argument, va_list ap)
 	return (n);
 }
 
-static int				unsigned_helper(PF *argument)
+static int			unsigned_helper(PF *argument)
 {
-	ssize_t				len;
-	int					nullstr;
+	ssize_t	len;
+	int		nullstr;
 
 	len = (ssize_t)ft_strlen(argument->arg);
 	nullstr = (len == 1 && !ft_strcmp(argument->arg, "0")) ? 0 : 1;
@@ -56,9 +56,9 @@ static int				unsigned_helper(PF *argument)
 	return (ft_print_number(argument, ""));
 }
 
-int						unsigned_handler(PF *argument, va_list ap)
+int					unsigned_handler(PF *argument, va_list ap)
 {
-	uintmax_t			n;
+	uintmax_t	n;
 
 	if (argument->spec == 'x' || argument->spec == 'X'
 		|| argument->spec == 'u' || argument->spec == 'o'
@@ -79,16 +79,16 @@ int						unsigned_handler(PF *argument, va_list ap)
 	return (unsigned_helper(argument));
 }
 
-int						prc_handler(PF *argument, va_list ap)
+int					prc_handler(PF *argument, va_list ap)
 {
 	argument->arg = "%";
 	ft_print_character(argument);
 	return ((int)ap);
 }
 
-int						pointer_handler(PF *argument, va_list ap)
+int					pointer_handler(PF *argument, va_list ap)
 {
-	uintmax_t			n;
+	uintmax_t	n;
 
 	n = va_arg(ap, uintmax_t);
 	argument->arg = ft_itoa_base(n, 16);

@@ -6,13 +6,13 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:12:13 by guvillat          #+#    #+#             */
-/*   Updated: 2019/09/23 14:09:36 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/02/07 00:11:52 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		ft_nputchar(char c, ssize_t n, PF *argument)
+void	ft_nputchar(char c, ssize_t n, PF *argument)
 {
 	ssize_t	i;
 	char	s[2];

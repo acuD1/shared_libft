@@ -6,21 +6,21 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 17:35:56 by gvillat           #+#    #+#             */
-/*   Updated: 2019/09/23 15:11:32 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/02/07 00:14:02 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void			ft_display(PF *argument)
+void		ft_display(PF *argument)
 {
 	argument->ret += write(argument->fd, &g_buff, g_i);
 	ft_init_buff();
 }
 
-static int		wstring_handler(PF *argument, va_list ap)
+static int	wstring_handler(PF *argument, va_list ap)
 {
-	ssize_t len;
+	ssize_t	len;
 
 	argument->warg = va_arg(ap, wchar_t *);
 	argument->spec = 'S';
@@ -34,9 +34,9 @@ static int		wstring_handler(PF *argument, va_list ap)
 	return (ft_print_str(argument));
 }
 
-int				string_handler(PF *argument, va_list ap)
+int			string_handler(PF *argument, va_list ap)
 {
-	ssize_t len;
+	ssize_t	len;
 	char	*tmp;
 
 	if (argument->spec == 'S' || argument->flags[10] == 1)
@@ -56,10 +56,10 @@ int				string_handler(PF *argument, va_list ap)
 	return (ft_print_str(argument));
 }
 
-int				ft_print_str(PF *argument)
+int			ft_print_str(PF *argument)
 {
-	ssize_t		len;
-	ssize_t		padding;
+	ssize_t	len;
+	ssize_t	padding;
 
 	if (!argument->arg)
 		return (-1);

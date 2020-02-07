@@ -6,13 +6,13 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:37 by guvillat          #+#    #+#             */
-/*   Updated: 2019/09/23 15:11:24 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/02/07 00:13:41 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static intmax_t		signed_cast(PF *argument, va_list ap)
+static intmax_t	signed_cast(PF *argument, va_list ap)
 {
 	intmax_t	n;
 
@@ -34,9 +34,9 @@ static intmax_t		signed_cast(PF *argument, va_list ap)
 	return (n);
 }
 
-static char			*test_string(PF *args)
+static char		*test_string(PF *args)
 {
-	int			octal;
+	int		octal;
 
 	if (!args->arg)
 		return (NULL);
@@ -55,7 +55,7 @@ static char			*test_string(PF *args)
 	return (args->arg);
 }
 
-int					signed_handler(PF *argument, va_list ap)
+int				signed_handler(PF *argument, va_list ap)
 {
 	intmax_t	n;
 
@@ -75,7 +75,7 @@ int					signed_handler(PF *argument, va_list ap)
 	return (ft_print_number(argument, ""));
 }
 
-static int			ft_print_number_bis(PF *argument, int padding)
+static int		ft_print_number_bis(PF *argument, int padding)
 {
 	ft_buff(argument->arg, argument);
 	if (argument->flags[4] == 1)
@@ -84,7 +84,7 @@ static int			ft_print_number_bis(PF *argument, int padding)
 	return (0);
 }
 
-int					ft_print_number(PF *argument, char *pre)
+int				ft_print_number(PF *argument, char *pre)
 {
 	int		len;
 	int		precision;

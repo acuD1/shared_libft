@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_number.c                                        :+:      :+:    :+:   */
+/*   ft_is_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpivet-p <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/01 09:23:40 by mpivet-p          #+#    #+#             */
-/*   Updated: 2019/12/01 09:26:55 by mpivet-p         ###   ########.fr       */
+/*   Created: 2019/07/19 12:20:14 by fcatusse          #+#    #+#             */
+/*   Updated: 2020/02/07 00:10:11 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-int8_t	is_number(const char *s)
+int		ft_is_print(int c)
 {
-	int i;
-
-	i = 0;
-	while (s && s[i])
-	{
-		if (s[i] < '0' || s[i] > '9')
-			return (-1);
-		i++;
-	}
+	if (c > 31 && c < 127)
+		return (1);
 	return (0);
 }

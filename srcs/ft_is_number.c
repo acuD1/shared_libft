@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isstart.c                                          :+:      :+:    :+:   */
+/*   ft_is_number.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 17:18:53 by fcatusse          #+#    #+#             */
-/*   Updated: 2020/01/04 19:47:23 by fcatusse         ###   ########.fr       */
+/*   Created: 2019/12/01 09:23:40 by mpivet-p          #+#    #+#             */
+/*   Updated: 2020/02/07 00:15:21 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-int			isstart(char *s1, char *s2)
+int8_t	ft_is_number(const char *s)
 {
 	int		i;
 
-	i = -1;
-	if (!*s2 || !*s1)
-		return (0);
-	while (s2[++i])
-		if (s1[i] != s2[i])
-			return (0);
-	return (1);
+	i = 0;
+	while (s && s[i])
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (-1);
+		i++;
+	}
+	return (0);
 }

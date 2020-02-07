@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 13:34:40 by guvillat          #+#    #+#             */
-/*   Updated: 2019/09/23 15:07:54 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/02/07 00:17:35 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_strlower(char *s)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (s[i] != '\0')

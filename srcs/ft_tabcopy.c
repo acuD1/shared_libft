@@ -6,13 +6,13 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 12:29:02 by fcatusse          #+#    #+#             */
-/*   Updated: 2019/09/23 10:02:35 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/02/07 00:18:28 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-char		**ft_tabcopy(char **tab_dest, char **tab_copy)
+char	**ft_tabcopy(char **tab_dest, char **tab_copy)
 {
 	int		i;
 
