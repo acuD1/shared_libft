@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/02/07 05:00:35 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/02/09 04:44:22 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ void				ft_tabdel(char ***array);
 void				ft_tabfree(char **array);
 int					ft_tablen(char **array);
 int					ft_tolower(int c);
+int					skip_opt(char **argv);
 
 #endif
