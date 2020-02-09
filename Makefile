@@ -113,6 +113,7 @@ SRC				+=	$(S_PATH)ft_tabdel.c
 SRC				+=	$(S_PATH)ft_tabfree.c
 SRC				+=	$(S_PATH)ft_tablen.c
 SRC				+=	$(S_PATH)ft_tolower.c
+SRC				+=	$(S_PATH)skip_options.c
 
 SRC				+=	$(S_PATH)$(PRINTF)char_conv.c
 SRC				+=	$(S_PATH)$(PRINTF)flags_handler.c
@@ -145,7 +146,7 @@ COMPL			=	$(C_GCC) -c -I$(H_PATH)
 BUILD			=	$(PATHS)
 AR_RC			=	ar rc
 RANLI			=	ranlib
-CFLAG			=	-Wall -Wextra -Werror
+CFLAG			=	-Wall -Wextra -Werror -g
 RM_RF			=	/bin/rm -rf
 MKDIR			=	mkdir -p
 NORME			=	norminette
