@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/02/11 15:04:23 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/02/11 15:11:54 by guvillat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char				*ft_strcpy(char *dst, const char *s);
 void				ft_strdel(char **as);
 char				*ft_strdup(const char *s);
 u_int8_t			ft_strequ(const char *s1, const char *s2);
-u_int8_t			ft_strisdigit(const char *str);
+int				ft_strisdigit(const char *str);
 char				*ft_strjoin(const char *s1, const char *s2);
 char				*ft_strjoinf(char *s1, char *s2, u_int8_t vars);
 size_t				ft_strlen_to(const char *s, char c);
