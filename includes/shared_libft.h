@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/02/11 15:14:03 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/02/17 13:26:52 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ char				*ft_strcpy(char *dst, const char *s);
 void				ft_strdel(char **as);
 char				*ft_strdup(const char *s);
 u_int8_t			ft_strequ(const char *s1, const char *s2);
-int				ft_strisdigit(const char *str);
+int					ft_strisdigit(const char *str);
+int8_t				ft_str_isprint(const char *str);
 char				*ft_strjoin(const char *s1, const char *s2);
 char				*ft_strjoinf(char *s1, char *s2, u_int8_t vars);
 size_t				ft_strlen_to(const char *s, char c);
@@ -76,7 +77,7 @@ void				*ft_strlower(char *s);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strncpy(char *s1, const char *s2, size_t n);
-int				ft_strnequ(const char *s1, const char *s2, size_t n);
+int					ft_strnequ(const char *s1, const char *s2, size_t n);
 char				*ft_strnew(size_t size);
 char				*ft_strrchr(const char *s, int c);
 char				**ft_strsplit(const char *s, char *charset);
