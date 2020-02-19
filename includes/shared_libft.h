@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/02/17 13:26:52 by fcatusse         ###   ########.fr       */
+/*   Updated: 2020/02/19 14:20:09 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,6 @@ void				ft_tabfree(char **array);
 int					ft_tablen(char **array);
 int					ft_tolower(int c);
 int					skip_opt(char **argv);
+void				swap_int(int *nb1, int *nb2);
 
 #endif

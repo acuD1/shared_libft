@@ -110,6 +110,7 @@ SRC				+=	$(S_PATH)ft_strsplit.c
 SRC				+=	$(S_PATH)ft_strstr.c
 SRC				+=	$(S_PATH)ft_strsub_free.c
 SRC				+=	$(S_PATH)ft_strsub.c
+SRC				+=	$(S_PATH)ft_swap_int.c
 SRC				+=	$(S_PATH)ft_tabchr.c
 SRC				+=	$(S_PATH)ft_tabcopy.c
 SRC				+=	$(S_PATH)ft_tabdel.c
