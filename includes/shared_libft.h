@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/02/19 14:20:09 by fcatusse         ###   ########.fr       */
+/*   Updated: 2020/02/19 14:25:03 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ char				*ft_strstr(const char *big, const char *little);
 char				*ft_strsub_free
 						(char const *s, unsigned int start, size_t len);
 char				*ft_strsub(const char *s, unsigned int start, size_t len);
+void				ft_swap_int(int *nb1, int *nb2);
 char				**ft_tabchr(char **tab_src, char *str);
 char				**ft_tabcopy(char **tab_dest, char **tab_copy);
 void				ft_tabdel(char ***array);
@@ -92,6 +93,5 @@ void				ft_tabfree(char **array);
 int					ft_tablen(char **array);
 int					ft_tolower(int c);
 int					skip_opt(char **argv);
-void				swap_int(int *nb1, int *nb2);
 
 #endif

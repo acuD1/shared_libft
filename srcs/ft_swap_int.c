@@ -6,13 +6,13 @@
 /*   By: fcatusse <fcatusse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 14:19:21 by fcatusse          #+#    #+#             */
-/*   Updated: 2020/02/19 14:19:49 by fcatusse         ###   ########.fr       */
+/*   Updated: 2020/02/19 14:24:48 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-void			swap_int(int *nb1, int *nb2)
+void			ft_swap_int(int *nb1, int *nb2)
 {
 	int			tmp;
 
