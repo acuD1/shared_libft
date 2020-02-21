@@ -57,6 +57,7 @@ PATHS			+=	$(O_PATH)$(PRINTF)
 # Files
 
 SRC				+=	$(S_PATH)ft_atoi.c
+SRC				+=	$(S_PATH)ft_atol.c
 SRC				+=	$(S_PATH)ft_bzero.c
 SRC				+=	$(S_PATH)ft_decade.c
 SRC				+=	$(S_PATH)ft_get_options.c

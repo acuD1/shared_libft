@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   shared_libft.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mpivet-p <mpivet-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/02/19 14:25:03 by fcatusse         ###   ########.fr       */
+/*   Updated: 2020/02/21 16:50:57 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct		s_lst
 */
 
 int32_t				ft_atoi(const char *s);
+int8_t				ft_atol(const char *s, int64_t *result);
 void				ft_bzero(void *s, size_t n);
 int					ft_decade(int nbr);
 u_int64_t			ft_get_options(int argc, char **argv, char *allowed);
