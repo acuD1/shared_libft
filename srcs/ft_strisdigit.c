@@ -6,13 +6,13 @@
 /*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 14:59:58 by guvillat          #+#    #+#             */
-/*   Updated: 2020/02/11 15:04:31 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/02/22 19:03:41 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-int ft_strisdigit(const char *str)
+int	ft_strisdigit(const char *str)
 {
 	int index;
 

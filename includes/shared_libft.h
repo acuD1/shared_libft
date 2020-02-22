@@ -6,7 +6,7 @@
 /*   By: mpivet-p <mpivet-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/02/21 16:50:57 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/02/22 19:02:04 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int8_t				ft_atol(const char *s, int64_t *result);
 void				ft_bzero(void *s, size_t n);
 int					ft_decade(int nbr);
 u_int64_t			ft_get_options(int argc, char **argv, char *allowed);
+int					get_next_line(int fd, char **line);
+void				remove_invalid_char(char *buff);
 int32_t				ft_getnextline(const int fd, char **line);
 int8_t				ft_is_number(const char *s);
 int					ft_is_print(int c);
