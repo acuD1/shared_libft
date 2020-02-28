@@ -46,7 +46,7 @@ int					ft_isblank(int c);
 int					ft_isdigit(int c);
 u_int8_t			ft_isnum(char *str);
 int					ft_isstart(const char *s1, const char *s2);
-char				*ft_itoa_base(uintmax_t nbr, int base);
+char				*ft_itoa_base(u_int64_t nbr, int base);
 char				*ft_itoa(int32_t n);
 int8_t				ft_itoabuf(int number, char *buffer);
 t_lst				*ft_lstappend(t_lst **alst, t_lst *new);

@@ -12,11 +12,11 @@
 
 #include "ft_printf.h"
 
-static intmax_t	signed_cast(PF *argument, va_list ap)
+static int64_t	signed_cast(PF *argument, va_list ap)
 {
-	intmax_t	n;
+	int64_t	n;
 
-	n = va_arg(ap, intmax_t);
+	n = va_arg(ap, int64_t);
 	if (argument->flags[12] == 1)
 		n = (size_t)n;
 	else if (argument->flags[11] == 1)
@@ -57,10 +57,10 @@ static char		*test_string(PF *args)
 
 int				signed_handler(PF *argument, va_list ap)
 {
-	intmax_t	n;
+	int64_t	n;
 
 	n = (argument->spec == 'd' || argument->spec == 'i') ?
-	signed_cast(argument, ap) : (long int)va_arg(ap, intmax_t);
+	signed_cast(argument, ap) : (long int)va_arg(ap, int64_t);
 	if (n >= 0)
 		argument->arg = ft_itoa_base(n, 10);
 	else if (n < 0)

@@ -12,11 +12,11 @@
 
 #include "ft_printf.h"
 
-static uintmax_t	unsigned_cast(PF *argument, va_list ap)
+static u_int64_t	unsigned_cast(PF *argument, va_list ap)
 {
-	uintmax_t	n;
+	u_int64_t	n;
 
-	n = va_arg(ap, uintmax_t);
+	n = va_arg(ap, u_int64_t);
 	if (argument->flags[7] == 1)
 		n = (unsigned char)(n);
 	else if (argument->flags[8] == 1)
@@ -26,7 +26,7 @@ static uintmax_t	unsigned_cast(PF *argument, va_list ap)
 	else if (argument->flags[9] == 1)
 		n = (unsigned long long)(n);
 	else if (argument->flags[11] == 1)
-		n = (uintmax_t)(n);
+		n = (u_int64_t)(n);
 	else if (argument->flags[12] == 1)
 		n = (size_t)(n);
 	else
@@ -58,14 +58,14 @@ static int			unsigned_helper(PF *argument)
 
 int					unsigned_handler(PF *argument, va_list ap)
 {
-	uintmax_t	n;
+	u_int64_t	n;
 
 	if (argument->spec == 'x' || argument->spec == 'X'
 		|| argument->spec == 'u' || argument->spec == 'o'
 		|| argument->spec == 'b')
 		n = unsigned_cast(argument, ap);
 	else
-		n = (unsigned long int)va_arg(ap, uintmax_t);
+		n = (unsigned long int)va_arg(ap, u_int64_t);
 	if (argument->spec == 'o' || argument->spec == 'O')
 		argument->arg = ft_itoa_base(n, 8);
 	else if (argument->spec == 'u' || argument->spec == 'U')
@@ -88,9 +88,9 @@ int					prc_handler(PF *argument, va_list ap)
 
 int					pointer_handler(PF *argument, va_list ap)
 {
-	uintmax_t	n;
+	u_int64_t	n;
 
-	n = va_arg(ap, uintmax_t);
+	n = va_arg(ap, u_int64_t);
 	argument->arg = ft_itoa_base(n, 16);
 	argument->arg = ft_strlower(argument->arg);
 	return (ft_print_number(argument, "0x"));

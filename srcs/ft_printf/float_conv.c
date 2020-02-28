@@ -41,7 +41,7 @@ long double	ft_round(long double nbr, int precision)
 	int			i;
 	long double	fl;
 	long double	tt;
-	uintmax_t	curr;
+	u_int64_t	curr;
 
 	curr = 0;
 	tt = nbr;
@@ -49,9 +49,9 @@ long double	ft_round(long double nbr, int precision)
 	i = 0;
 	while (i < precision)
 	{
-		tt = tt - (uintmax_t)tt;
+		tt = tt - (u_int64_t)tt;
 		tt *= 10;
-		curr = (uintmax_t)tt;
+		curr = (u_int64_t)tt;
 		fl /= 10;
 		i++;
 	}
@@ -62,7 +62,7 @@ long double	ft_round(long double nbr, int precision)
 
 char		*ft_getipart(long double nf, PF *argument, int precision)
 {
-	uintmax_t	curr;
+	u_int64_t	curr;
 	char		*tmp;
 	char		*ptr;
 	int			i;
@@ -72,9 +72,9 @@ char		*ft_getipart(long double nf, PF *argument, int precision)
 		return (NULL);
 	while (i < precision)
 	{
-		nf = nf - (uintmax_t)nf;
+		nf = nf - (u_int64_t)nf;
 		nf *= 10;
-		curr = (uintmax_t)nf % 10;
+		curr = (u_int64_t)nf % 10;
 		ptr = ft_itoa_base(curr, 10);
 		tmp = ft_strncat(tmp, ptr, 1);
 		free(ptr);
@@ -87,14 +87,14 @@ char		*ft_getipart(long double nf, PF *argument, int precision)
 
 char		*ft_ftoa(long double nbr, PF *argument, int precision)
 {
-	uintmax_t	digit;
+	u_int64_t	digit;
 
 	digit = nbr * 10;
 	digit %= 10;
 	if (!precision)
 		if (digit >= 5)
 			nbr++;
-	argument->arg = ft_itoa_base((uintmax_t)nbr, 10);
+	argument->arg = ft_itoa_base((u_int64_t)nbr, 10);
 	if (precision || argument->flags[2])
 		argument->arg = ft_strncat(argument->arg, ".", 1);
 	if (precision)
