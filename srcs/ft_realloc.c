@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fcatusse <fcatusse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 11:03:28 by arsciand          #+#    #+#             */
-/*   Updated: 2020/02/29 13:07:59 by fcatusse         ###   ########.fr       */
+/*   Created: 2020/02/29 13:05:02 by fcatusse          #+#    #+#             */
+/*   Updated: 2020/02/29 13:08:27 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-char	*ft_strnew(size_t size)
+char		*ft_realloc(char *ptr, size_t size)
 {
-	return (ft_memalloc(size + 1));
+	char	*new;
+
+	new = NULL;
+	if (!(new = ft_strnew(size)))
+		return (NULL);
+	ft_strcpy(new, ptr);
+	ft_strdel(&ptr);
+	return (new);
 }

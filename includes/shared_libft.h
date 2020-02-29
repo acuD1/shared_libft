@@ -6,7 +6,7 @@
 /*   By: mpivet-p <mpivet-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/02/22 19:02:04 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/02/29 13:08:55 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ void				ft_tabfree(char **array);
 int					ft_tablen(char **array);
 int					ft_tolower(int c);
 int					skip_opt(char **argv);
+char				*ft_realloc(char *ptr, size_t size);
 
 #endif

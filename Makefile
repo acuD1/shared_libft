@@ -121,6 +121,7 @@ SRC				+=	$(S_PATH)ft_tabfree.c
 SRC				+=	$(S_PATH)ft_tablen.c
 SRC				+=	$(S_PATH)ft_tolower.c
 SRC				+=	$(S_PATH)skip_options.c
+SRC				+=	$(S_PATH)ft_realloc.c
 
 SRC				+=	$(S_PATH)$(PRINTF)char_conv.c
 SRC				+=	$(S_PATH)$(PRINTF)flags_handler.c
