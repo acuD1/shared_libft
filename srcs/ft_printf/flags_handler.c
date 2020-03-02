@@ -28,7 +28,7 @@ int		ft_check_width(PF *argu, va_list ap)
 		{
 			str = ft_strsub(argu->format, i, argu->index - i);
 			argu->flags[1] = ft_atoi((const char*)str);
-			free(str);
+			ft_strdel(&str);
 		}
 	}
 	ft_wildcard(argu, ap, 1);
@@ -53,7 +53,7 @@ int		ft_check_precision(PF *argument, va_list ap)
 		{
 			str = ft_strsub(argument->format, i, argument->index - i);
 			argument->flags[0] = ft_atoi((const char*)str);
-			free(str);
+			ft_strdel(&str);
 		}
 	}
 	return (argument->index);

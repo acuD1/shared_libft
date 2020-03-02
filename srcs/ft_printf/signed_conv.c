@@ -80,7 +80,7 @@ static int		ft_print_number_bis(PF *argument, int padding)
 	ft_buff(argument->arg, argument);
 	if (argument->flags[4] == 1)
 		ft_nputchar(' ', padding, argument);
-	free(argument->arg);
+	ft_strdel(&argument->arg);
 	return (0);
 }
 

@@ -87,6 +87,7 @@ int		ft_printf(const char *format, ...)
 	argument.ret = 0;
 	va_start(ap, format);
 	ft_init_argument(&argument);
+	argument.fd = 1;
 	ft_init_buff();
 	argument.fd = 1;
 	ft_check_format((char*)format, &argument, ap);

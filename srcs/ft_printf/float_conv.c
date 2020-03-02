@@ -77,11 +77,11 @@ char		*ft_getipart(long double nf, PF *argument, int precision)
 		curr = (u_int64_t)nf % 10;
 		ptr = ft_itoa_base(curr, 10);
 		tmp = ft_strncat(tmp, ptr, 1);
-		free(ptr);
+		ft_strdel(&ptr);
 		i++;
 	}
 	argument->arg = ft_strncat(argument->arg, tmp, precision);
-	free(tmp);
+	ft_strdel(&tmp);
 	return (argument->arg);
 }
 

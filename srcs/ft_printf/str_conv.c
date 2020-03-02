@@ -45,13 +45,12 @@ int			string_handler(PF *argument, va_list ap)
 	if (!tmp)
 		argument->arg = ft_strdup("(null)");
 	else
-		argument->arg = ft_strdup(tmp);
-	len = ft_strlen(argument->arg);
-	if (argument->flags[0] > -1 && argument->flags[0] < len)
 	{
-		tmp = ft_strsub(argument->arg, 0, argument->flags[0] + 1);
-		free(argument->arg);
-		argument->arg = tmp;
+		len = ft_strlen(tmp);
+		if (argument->flags[0] > -1 && argument->flags[0] < len)
+			argument->arg = ft_strsub(tmp, 0, argument->flags[0]);
+		else
+			argument->arg = ft_strdup(tmp);
 	}
 	return (ft_print_str(argument));
 }
@@ -76,6 +75,6 @@ int			ft_print_str(PF *argument)
 	ft_buff(argument->arg, argument);
 	if (argument->flags[4] == 1)
 		ft_nputchar(' ', padding, argument);
-	free(argument->arg);
+	ft_strdel(&argument->arg);
 	return (0);
 }
