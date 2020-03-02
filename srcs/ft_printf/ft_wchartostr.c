@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_wchartostr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:13:42 by guvillat          #+#    #+#             */
-/*   Updated: 2020/02/07 00:12:29 by arsciand         ###   ########.fr       */
+/*   Updated: 2019/01/23 15:13:44 by guvillat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-static int	ft_wchartostr_bis(char *s, wchar_t wc)
+static int		ft_wchartostr_bis(char *s, wchar_t wc)
 {
 	if (wc < 0x800)
 	{
@@ -38,7 +38,7 @@ static int	ft_wchartostr_bis(char *s, wchar_t wc)
 	return (0);
 }
 
-int			ft_wchartostr(char *s, wchar_t wc)
+int				ft_wchartostr(char *s, wchar_t wc)
 {
 	if (wc < 0x80)
 	{

@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   unsigned_conv.c                                    :+:      :+:    :+:   */
+/*   ft_unsigned_conv.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:51 by guvillat          #+#    #+#             */
-/*   Updated: 2020/02/07 00:14:35 by arsciand         ###   ########.fr       */
+/*   Updated: 2019/01/23 15:27:52 by guvillat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-static u_int64_t	unsigned_cast(PF *argument, va_list ap)
+static uintmax_t		unsigned_cast(PF *argument, va_list ap)
 {
-	u_int64_t	n;
+	uintmax_t			n;
 
-	n = va_arg(ap, u_int64_t);
+	n = va_arg(ap, uintmax_t);
 	if (argument->flags[7] == 1)
 		n = (unsigned char)(n);
 	else if (argument->flags[8] == 1)
@@ -26,7 +26,7 @@ static u_int64_t	unsigned_cast(PF *argument, va_list ap)
 	else if (argument->flags[9] == 1)
 		n = (unsigned long long)(n);
 	else if (argument->flags[11] == 1)
-		n = (u_int64_t)(n);
+		n = (uintmax_t)(n);
 	else if (argument->flags[12] == 1)
 		n = (size_t)(n);
 	else
@@ -34,10 +34,10 @@ static u_int64_t	unsigned_cast(PF *argument, va_list ap)
 	return (n);
 }
 
-static int			unsigned_helper(PF *argument)
+static int				unsigned_helper(PF *argument)
 {
-	ssize_t	len;
-	int		nullstr;
+	ssize_t				len;
+	int					nullstr;
 
 	len = (ssize_t)ft_strlen(argument->arg);
 	nullstr = (len == 1 && !ft_strcmp(argument->arg, "0")) ? 0 : 1;
@@ -56,42 +56,48 @@ static int			unsigned_helper(PF *argument)
 	return (ft_print_number(argument, ""));
 }
 
-int					unsigned_handler(PF *argument, va_list ap)
+int						unsigned_handler(PF *argument, va_list ap)
 {
-	u_int64_t	n;
+	uintmax_t			n;
+	char				*tmp;
 
 	if (argument->spec == 'x' || argument->spec == 'X'
 		|| argument->spec == 'u' || argument->spec == 'o'
 		|| argument->spec == 'b')
 		n = unsigned_cast(argument, ap);
 	else
-		n = (unsigned long int)va_arg(ap, u_int64_t);
+		n = (unsigned long int)va_arg(ap, uintmax_t);
 	if (argument->spec == 'o' || argument->spec == 'O')
-		argument->arg = ft_itoa_base(n, 8);
+		tmp = ft_itoa_base(n, 8);
 	else if (argument->spec == 'u' || argument->spec == 'U')
-		argument->arg = ft_itoa_base(n, 10);
+		tmp = ft_itoa_base(n, 10);
 	else if (argument->spec == 'x')
-		argument->arg = ft_strlower(ft_itoa_base(n, 16));
+		tmp = ft_strlower(ft_itoa_base(n, 16));
 	else if (argument->spec == 'b')
-		argument->arg = ft_itoa_base(n, 2);
+		tmp = ft_itoa_base(n, 2);
 	else
-		argument->arg = ft_itoa_base(n, 16);
+		tmp = ft_itoa_base(n, 16);
+	argument->arg = tmp;
+	free(tmp);
 	return (unsigned_helper(argument));
 }
 
-int					prc_handler(PF *argument, va_list ap)
+int						prc_handler(PF *argument, va_list ap)
 {
 	argument->arg = "%";
 	ft_print_character(argument);
 	return ((int)ap);
 }
 
-int					pointer_handler(PF *argument, va_list ap)
+int						pointer_handler(PF *argument, va_list ap)
 {
-	u_int64_t	n;
+	uintmax_t			n;
+	char				*tmp;
 
-	n = va_arg(ap, u_int64_t);
-	argument->arg = ft_itoa_base(n, 16);
-	argument->arg = ft_strlower(argument->arg);
+	n = va_arg(ap, uintmax_t);
+	tmp = ft_itoa_base(n, 16);
+	tmp = ft_strlower(tmp);
+	argument->arg = tmp;
+	free(tmp);
 	return (ft_print_number(argument, "0x"));
 }

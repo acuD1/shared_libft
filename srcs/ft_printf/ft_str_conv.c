@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_conv.c                                         :+:      :+:    :+:   */
+/*   ft_str_conv.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/27 17:35:56 by gvillat           #+#    #+#             */
-/*   Updated: 2020/02/07 00:14:02 by arsciand         ###   ########.fr       */
+/*   Created: 2019/01/23 15:27:43 by guvillat          #+#    #+#             */
+/*   Updated: 2020/03/02 16:50:29 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-void		ft_display(PF *argument)
+void			ft_display(PF *argument)
 {
 	argument->ret += write(argument->fd, &g_buff, g_i);
 	ft_init_buff();
 }
 
-static int	wstring_handler(PF *argument, va_list ap)
+static int		wstring_handler(PF *argument, va_list ap)
 {
-	ssize_t	len;
+	ssize_t len;
 
 	argument->warg = va_arg(ap, wchar_t *);
 	argument->spec = 'S';
@@ -34,9 +34,9 @@ static int	wstring_handler(PF *argument, va_list ap)
 	return (ft_print_str(argument));
 }
 
-int			string_handler(PF *argument, va_list ap)
+int				string_handler(PF *argument, va_list ap)
 {
-	ssize_t	len;
+	ssize_t len;
 	char	*tmp;
 
 	if (argument->spec == 'S' || argument->flags[10] == 1)
@@ -55,11 +55,13 @@ int			string_handler(PF *argument, va_list ap)
 	return (ft_print_str(argument));
 }
 
-int			ft_print_str(PF *argument)
+int				ft_print_str(PF *argument)
 {
-	ssize_t	len;
-	ssize_t	padding;
+	ssize_t		len;
+	ssize_t		padding;
+	int			i;
 
+	i = -1;
 	if (!argument->arg)
 		return (-1);
 	len = (ssize_t)ft_strlen(argument->arg);
