@@ -6,7 +6,7 @@
 /*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:43 by guvillat          #+#    #+#             */
-/*   Updated: 2019/01/23 15:27:43 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/03/02 16:50:29 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void			ft_display(PF *argument)
 {
-	argument->ret += write(1, &g_buff, g_i);
+	argument->ret += write(argument->fd, &g_buff, g_i);
 	ft_init_buff();
 }
 

@@ -6,7 +6,7 @@
 /*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:11 by guvillat          #+#    #+#             */
-/*   Updated: 2019/01/23 15:27:14 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/03/02 16:51:03 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ int		ft_printf(const char *format, ...)
 		return (-1);
 	g_i = 0;
 	argument.ret = 0;
+	argument.fd = STDOUT_FILENO;
 	va_start(ap, format);
 	ft_init_argument(&argument);
 	ft_init_buff();
