@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   signed_conv.c                                      :+:      :+:    :+:   */
+/*   ft_signed_conv.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:37 by guvillat          #+#    #+#             */
-/*   Updated: 2020/02/07 00:13:41 by arsciand         ###   ########.fr       */
+/*   Updated: 2019/01/23 15:27:38 by guvillat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-static int64_t	signed_cast(PF *argument, va_list ap)
+static intmax_t		signed_cast(PF *argument, va_list ap)
 {
-	int64_t	n;
+	intmax_t	n;
 
-	n = va_arg(ap, int64_t);
+	n = va_arg(ap, intmax_t);
 	if (argument->flags[12] == 1)
 		n = (size_t)n;
 	else if (argument->flags[11] == 1)
@@ -34,9 +34,9 @@ static int64_t	signed_cast(PF *argument, va_list ap)
 	return (n);
 }
 
-static char		*test_string(PF *args)
+static char			*test_string(PF *args)
 {
-	int		octal;
+	int			octal;
 
 	if (!args->arg)
 		return (NULL);
@@ -47,25 +47,31 @@ static char		*test_string(PF *args)
 	{
 		if (!octal || (octal && !args->flags[2]))
 		{
-			free(args->arg);
-			args->arg = ft_strdup("\0");
+			args->arg = "\0";
 			return (args->arg);
 		}
 	}
 	return (args->arg);
 }
 
-int				signed_handler(PF *argument, va_list ap)
+int					signed_handler(PF *argument, va_list ap)
 {
-	int64_t	n;
+	intmax_t	n;
+	char		*tmp;
 
 	n = (argument->spec == 'd' || argument->spec == 'i') ?
-	signed_cast(argument, ap) : (long int)va_arg(ap, int64_t);
+	signed_cast(argument, ap) : (long int)va_arg(ap, intmax_t);
 	if (n >= 0)
-		argument->arg = ft_itoa_base(n, 10);
+	{
+		tmp = ft_itoa_base(n, 10);
+		argument->arg = tmp;
+		free(tmp);
+	}
 	else if (n < 0)
 	{
-		argument->arg = ft_itoa_base(-n, 10);
+		tmp = ft_itoa_base(-n, 10);
+		argument->arg = tmp;
+		free(tmp);
 		return (ft_print_number(argument, "-"));
 	}
 	if (argument->flags[5])
@@ -75,16 +81,17 @@ int				signed_handler(PF *argument, va_list ap)
 	return (ft_print_number(argument, ""));
 }
 
-static int		ft_print_number_bis(PF *argument, int padding)
+static int			ft_print_number_bis(PF *argument, int padding)
 {
 	ft_buff(argument->arg, argument);
 	if (argument->flags[4] == 1)
 		ft_nputchar(' ', padding, argument);
-	free(argument->arg);
+	if (argument->flags[0] && argument->spec == 'f')
+		free(argument->arg);
 	return (0);
 }
 
-int				ft_print_number(PF *argument, char *pre)
+int					ft_print_number(PF *argument, char *pre)
 {
 	int		len;
 	int		precision;

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flags_handler.c                                    :+:      :+:    :+:   */
+/*   ft_flags.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:26:53 by guvillat          #+#    #+#             */
-/*   Updated: 2020/02/07 00:14:49 by arsciand         ###   ########.fr       */
+/*   Updated: 2019/01/23 15:26:55 by guvillat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int		ft_check_width(PF *argu, va_list ap)
 {
@@ -39,13 +39,14 @@ int		ft_check_precision(PF *argument, va_list ap)
 {
 	int		i;
 	char	*str;
+	int		wild;
 
 	if (argument->format[argument->index] == '.')
 	{
-		argument->index++;
+		i = ++argument->index;
 		argument->flags[0] = 0;
 		if (argument->format[argument->index] == '*')
-			ft_wildcard(argument, ap, 0);
+			wild = ft_wildcard(argument, ap, 0);
 		i = argument->index;
 		while (ft_isdigit(argument->format[argument->index]))
 			argument->index++;

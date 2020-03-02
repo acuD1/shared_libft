@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char_conv.c                                        :+:      :+:    :+:   */
+/*   ft_char_conv.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:26:27 by guvillat          #+#    #+#             */
-/*   Updated: 2020/02/07 00:10:49 by arsciand         ###   ########.fr       */
+/*   Updated: 2019/01/23 15:26:30 by guvillat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-int			ft_arg_nospe(PF *argument, va_list ap)
+int					ft_arg_nospe(PF *argument, va_list ap)
 {
-	char	c[2];
+	char c[2];
 
 	c[0] = argument->spec;
 	c[1] = '\0';
@@ -23,9 +23,9 @@ int			ft_arg_nospe(PF *argument, va_list ap)
 	return ((int)ap);
 }
 
-static int	wchar_handler(va_list ap, PF *argument)
+static int			wchar_handler(va_list ap, PF *argument)
 {
-	wint_t	c;
+	wint_t			c;
 
 	c = (wint_t)va_arg(ap, wint_t);
 	argument->spec = 'C';
@@ -47,7 +47,7 @@ static int	wchar_handler(va_list ap, PF *argument)
 	return (0);
 }
 
-int			character_handler(PF *argument, va_list ap)
+int					character_handler(PF *argument, va_list ap)
 {
 	char	c[2];
 
@@ -60,10 +60,10 @@ int			character_handler(PF *argument, va_list ap)
 	return (0);
 }
 
-int			ft_print_character(PF *argument)
+int					ft_print_character(PF *argument)
 {
-	ssize_t	len;
-	ssize_t	padding;
+	ssize_t		len;
+	ssize_t		padding;
 
 	len = 1;
 	padding = 0;

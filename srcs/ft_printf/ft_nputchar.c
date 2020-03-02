@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_nputchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:12:13 by guvillat          #+#    #+#             */
-/*   Updated: 2020/02/07 00:11:52 by arsciand         ###   ########.fr       */
+/*   Updated: 2019/01/23 15:12:18 by guvillat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-void	ft_nputchar(char c, ssize_t n, PF *argument)
+void		ft_nputchar(char c, ssize_t n, PF *argument)
 {
 	ssize_t	i;
 	char	s[2];

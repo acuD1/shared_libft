@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   float_conv.c                                       :+:      :+:    :+:   */
+/*   ft_float_conv.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 14:42:32 by guvillat          #+#    #+#             */
-/*   Updated: 2020/02/07 00:11:32 by arsciand         ###   ########.fr       */
+/*   Updated: 2019/01/28 14:42:33 by guvillat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-int			ft_wildcard(PF *argument, va_list ap, int i)
+int				ft_wildcard(PF *argument, va_list ap, int i)
 {
 	if (argument->format[argument->index] == '*')
 	{
@@ -36,12 +36,12 @@ int			ft_wildcard(PF *argument, va_list ap, int i)
 	return (1);
 }
 
-long double	ft_round(long double nbr, int precision)
+long double		ft_round(long double nbr, int precision)
 {
 	int			i;
 	long double	fl;
 	long double	tt;
-	u_int64_t	curr;
+	uintmax_t	curr;
 
 	curr = 0;
 	tt = nbr;
@@ -49,9 +49,9 @@ long double	ft_round(long double nbr, int precision)
 	i = 0;
 	while (i < precision)
 	{
-		tt = tt - (u_int64_t)tt;
+		tt = tt - (uintmax_t)tt;
 		tt *= 10;
-		curr = (u_int64_t)tt;
+		curr = (uintmax_t)tt;
 		fl /= 10;
 		i++;
 	}
@@ -60,9 +60,9 @@ long double	ft_round(long double nbr, int precision)
 	return (nbr);
 }
 
-char		*ft_getipart(long double nf, PF *argument, int precision)
+char			*ft_getipart(long double nf, PF *argument, int precision)
 {
-	u_int64_t	curr;
+	uintmax_t	curr;
 	char		*tmp;
 	char		*ptr;
 	int			i;
@@ -72,9 +72,9 @@ char		*ft_getipart(long double nf, PF *argument, int precision)
 		return (NULL);
 	while (i < precision)
 	{
-		nf = nf - (u_int64_t)nf;
+		nf = nf - (uintmax_t)nf;
 		nf *= 10;
-		curr = (u_int64_t)nf % 10;
+		curr = (uintmax_t)nf % 10;
 		ptr = ft_itoa_base(curr, 10);
 		tmp = ft_strncat(tmp, ptr, 1);
 		free(ptr);
@@ -85,16 +85,16 @@ char		*ft_getipart(long double nf, PF *argument, int precision)
 	return (argument->arg);
 }
 
-char		*ft_ftoa(long double nbr, PF *argument, int precision)
+char			*ft_ftoa(long double nbr, PF *argument, int precision)
 {
-	u_int64_t	digit;
+	uintmax_t	digit;
 
 	digit = nbr * 10;
 	digit %= 10;
 	if (!precision)
 		if (digit >= 5)
 			nbr++;
-	argument->arg = ft_itoa_base((u_int64_t)nbr, 10);
+	argument->arg = ft_itoa_base((uintmax_t)nbr, 10);
 	if (precision || argument->flags[2])
 		argument->arg = ft_strncat(argument->arg, ".", 1);
 	if (precision)
@@ -106,7 +106,7 @@ char		*ft_ftoa(long double nbr, PF *argument, int precision)
 	return (argument->arg);
 }
 
-int			float_handler(PF *argument, va_list ap)
+int				float_handler(PF *argument, va_list ap)
 {
 	long double	n;
 	int			precision;

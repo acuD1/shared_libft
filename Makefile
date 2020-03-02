@@ -123,21 +123,21 @@ SRC				+=	$(S_PATH)ft_tolower.c
 SRC				+=	$(S_PATH)skip_options.c
 SRC				+=	$(S_PATH)ft_realloc.c
 
-SRC				+=	$(S_PATH)$(PRINTF)char_conv.c
-SRC				+=	$(S_PATH)$(PRINTF)flags_handler.c
-SRC				+=	$(S_PATH)$(PRINTF)float_conv.c
+SRC				+=	$(S_PATH)$(PRINTF)ft_char_conv.c
+SRC				+=	$(S_PATH)$(PRINTF)ft_flags.c
+SRC				+=	$(S_PATH)$(PRINTF)ft_float_conv.c
 SRC				+=	$(S_PATH)$(PRINTF)ft_dprintf.c
 SRC				+=	$(S_PATH)$(PRINTF)ft_nputchar.c
 SRC				+=	$(S_PATH)$(PRINTF)ft_printf.c
-SRC				+=	$(S_PATH)$(PRINTF)ft_wcharlen.c
+SRC				+=	$(S_PATH)ft_wcharlen.c
 SRC				+=	$(S_PATH)$(PRINTF)ft_wchartostr.c
 SRC				+=	$(S_PATH)$(PRINTF)ft_wstrlen.c
 SRC				+=	$(S_PATH)$(PRINTF)ft_wstrsub.c
 SRC				+=	$(S_PATH)$(PRINTF)ft_wstrtostr.c
-SRC				+=	$(S_PATH)$(PRINTF)memory_handler.c
-SRC				+=	$(S_PATH)$(PRINTF)signed_conv.c
-SRC				+=	$(S_PATH)$(PRINTF)str_conv.c
-SRC				+=	$(S_PATH)$(PRINTF)unsigned_conv.c
+SRC				+=	$(S_PATH)$(PRINTF)ft_memory.c
+SRC				+=	$(S_PATH)$(PRINTF)ft_signed_conv.c
+SRC				+=	$(S_PATH)$(PRINTF)ft_str_conv.c
+SRC				+=	$(S_PATH)$(PRINTF)ft_unsigned_conv.c
 
 # Objects and Headers
 

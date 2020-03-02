@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:11 by guvillat          #+#    #+#             */
-/*   Updated: 2020/02/07 00:12:12 by arsciand         ###   ########.fr       */
+/*   Updated: 2019/01/23 15:27:14 by guvillat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void	ft_buf(char c, PF *argument)
 {
@@ -22,7 +22,7 @@ void	ft_buf(char c, PF *argument)
 
 void	*ft_buff(char *str, PF *argument)
 {
-	int		i;
+	int i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -54,8 +54,8 @@ int		ft_get_flags(PF *argu, va_list ap)
 
 int		ft_check_format(char *str, PF *argument, va_list ap)
 {
-	int		i;
-	SPE		spe[128];
+	int i;
+	SPE spe[128];
 
 	i = -1;
 	ft_init_spe_tab(spe);
@@ -78,7 +78,7 @@ int		ft_check_format(char *str, PF *argument, va_list ap)
 
 int		ft_printf(const char *format, ...)
 {
-	va_list	ap;
+	va_list ap;
 	PF		argument;
 
 	if (!format)
@@ -88,7 +88,6 @@ int		ft_printf(const char *format, ...)
 	va_start(ap, format);
 	ft_init_argument(&argument);
 	ft_init_buff();
-	argument.fd = 1;
 	ft_check_format((char*)format, &argument, ap);
 	if (g_i)
 		ft_display(&argument);
