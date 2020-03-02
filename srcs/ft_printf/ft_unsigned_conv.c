@@ -59,7 +59,6 @@ static int				unsigned_helper(PF *argument)
 int						unsigned_handler(PF *argument, va_list ap)
 {
 	uintmax_t			n;
-	char				*tmp;
 
 	if (argument->spec == 'x' || argument->spec == 'X'
 		|| argument->spec == 'u' || argument->spec == 'o'
@@ -68,17 +67,15 @@ int						unsigned_handler(PF *argument, va_list ap)
 	else
 		n = (unsigned long int)va_arg(ap, uintmax_t);
 	if (argument->spec == 'o' || argument->spec == 'O')
-		tmp = ft_itoa_base(n, 8);
+		argument->arg = ft_itoa_base(n, 8);
 	else if (argument->spec == 'u' || argument->spec == 'U')
-		tmp = ft_itoa_base(n, 10);
+		argument->arg = ft_itoa_base(n, 10);
 	else if (argument->spec == 'x')
-		tmp = ft_strlower(ft_itoa_base(n, 16));
+		argument->arg = ft_strlower(ft_itoa_base(n, 16));
 	else if (argument->spec == 'b')
-		tmp = ft_itoa_base(n, 2);
+		argument->arg = ft_itoa_base(n, 2);
 	else
-		tmp = ft_itoa_base(n, 16);
-	argument->arg = tmp;
-	free(tmp);
+		argument->arg = ft_itoa_base(n, 16);
 	return (unsigned_helper(argument));
 }
 
@@ -92,12 +89,9 @@ int						prc_handler(PF *argument, va_list ap)
 int						pointer_handler(PF *argument, va_list ap)
 {
 	uintmax_t			n;
-	char				*tmp;
 
 	n = va_arg(ap, uintmax_t);
-	tmp = ft_itoa_base(n, 16);
-	tmp = ft_strlower(tmp);
-	argument->arg = tmp;
-	free(tmp);
+	argument->arg = ft_itoa_base(n, 16);
+	argument->arg = ft_strlower(argument->arg);
 	return (ft_print_number(argument, "0x"));
 }

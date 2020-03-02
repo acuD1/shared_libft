@@ -34,44 +34,36 @@ static intmax_t		signed_cast(PF *argument, va_list ap)
 	return (n);
 }
 
-static char			*test_string(PF *args)
+static void			test_string(PF *args)
 {
 	int			octal;
 
 	if (!args->arg)
-		return (NULL);
+		return ;
 	octal = 0;
 	if (args->spec == 'o' || args->spec == 'O')
 		octal = 1;
-	if (ft_strcmp((const char *)args->arg, "0") == 0 && args->flags[0] == 0)
+	if (args->arg[0] == '0' && !args->arg[1] && args->flags[0] == 0)
 	{
 		if (!octal || (octal && !args->flags[2]))
 		{
-			args->arg = "\0";
-			return (args->arg);
+			ft_strdel(&args->arg);
+			args->arg = ft_strdup("");
 		}
 	}
-	return (args->arg);
 }
 
 int					signed_handler(PF *argument, va_list ap)
 {
 	intmax_t	n;
-	char		*tmp;
 
 	n = (argument->spec == 'd' || argument->spec == 'i') ?
 	signed_cast(argument, ap) : (long int)va_arg(ap, intmax_t);
 	if (n >= 0)
-	{
-		tmp = ft_itoa_base(n, 10);
-		argument->arg = tmp;
-		free(tmp);
-	}
+		argument->arg = ft_itoa_base(n, 10);
 	else if (n < 0)
 	{
-		tmp = ft_itoa_base(-n, 10);
-		argument->arg = tmp;
-		free(tmp);
+		argument->arg = ft_itoa_base(-n, 10);
 		return (ft_print_number(argument, "-"));
 	}
 	if (argument->flags[5])

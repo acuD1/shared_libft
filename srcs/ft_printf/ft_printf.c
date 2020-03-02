@@ -22,11 +22,11 @@ void	ft_buf(char c, PF *argument)
 
 void	*ft_buff(char *str, PF *argument)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-		ft_buf(str[i++], argument);
+	while (*str)
+	{
+		ft_buf(*str, argument);
+		str++;
+	}
 	return (NULL);
 }
 
