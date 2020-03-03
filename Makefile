@@ -149,8 +149,19 @@ vpath %.h $(H_PATH)
 
 # Variables
 
-C_GCC			=	clang
-COMPL			=	$(C_GCC) -c -I$(H_PATH)
+DEBUG				=
+CFLAGS				= -Wall -Wextra -Werror
+ifeq ($(DEBUG), g)
+	CFLAGS = -g
+else ifeq ($(DEBUG), fsanitize)
+	CFLAGS = -fsanitize=address
+else ifeq ($(DEBUG), hard)
+	CFLAGS = -Wall -Wextra -Weverything -fsanitize=address,undefined
+else ifeq ($(DEBUG), dev)
+	CFLAGS =
+endif
+CC				=	clang $(CFLAGS)
+COMPL			=	$(CC) -c -I$(H_PATH)
 BUILD			=	$(PATHS)
 AR_RC			=	ar rc
 RANLI			=	ranlib
@@ -184,7 +195,7 @@ $(NAME): $(OBJ)
 	@$(RANLI) $(NAME)
 
 $(OBJ): $(O_PATH)%.o: $(S_PATH)%.c $(HDR)
-	@$(COMPL) $(CFLAG) $< -o $@
+	@$(COMPL) $< -o $@
 	@$(ECHO) $(GCFIL) $<
 
 $(PATHS):
