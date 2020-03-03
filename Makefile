@@ -183,7 +183,7 @@ NORMR			=	echo ">\n$(Y_C)----->     Norminette$(RESET_C)\n"
 # Rules
 
 make:
-#	$(MSG)
+	$(MSG)
 	$(MAKE) --no-print-directory all
 
 all: $(BUILD) $(NAME)
