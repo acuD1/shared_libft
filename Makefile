@@ -184,43 +184,47 @@ NORMR			=	echo ">\n$(Y_C)----->     Norminette$(RESET_C)\n"
 
 make:
 #	$(MSG)
-	@$(MAKE) --no-print-directory all
+	$(MAKE) --no-print-directory all
 
 all: $(BUILD) $(NAME)
 
 $(NAME): $(OBJ)
-	@$(SLEEP)
-	@$(AR_RC) $(NAME) $^
-	@$(ECHO) $(GCLAR) $@
-	@$(RANLI) $(NAME)
+	$(SLEEP)
+	$(AR_RC) $(NAME) $^
+	$(ECHO) $(GCLAR) $@
+	$(RANLI) $(NAME)
 
 $(OBJ): $(O_PATH)%.o: $(S_PATH)%.c $(HDR)
-	@$(COMPL) $< -o $@
-	@$(ECHO) $(GCFIL) $<
+	$(COMPL) $< -o $@
+	$(ECHO) $(GCFIL) $<
 
 $(PATHS):
-	@$(SLEEP)
-	@$(GCRUN)
-	@$(MKDIR) $(PATHS)
-	@$(foreach var,$(PATHS), $(ECHO) $(MKSHW) $(var);)
+	$(SLEEP)
+	$(GCRUN)
+	$(MKDIR) $(PATHS)
+	$(foreach var,$(PATHS), $(ECHO) $(MKSHW) $(var);)
 
 norme:
-	@$(NORMR)
-	@$(NORME) $(SRC) $(H_PATH)$(HNAME)
-	@$(NORMD)
+	$(NORMR)
+	$(NORME) $(SRC) $(H_PATH)$(HNAME)
+	$(NORMD)
 
 clean:
-	@$(CLRUN)
-	@for i in $(OBJ); do $(RM_RF) $$i; $(ECHO) $(RMSHW) $$i; done
+	$(CLRUN)
+	for i in $(OBJ); do $(RM_RF) $$i; $(ECHO) $(RMSHW) $$i; done
 
 fclean:
-	@$(CLRUN)
-	@for i in $(OBJ); do $(RM_RF) $$i; $(ECHO) $(RMSHW) $$i; done
-	@for i in $(PATHS); do $(RM_RF) $$i; $(ECHO) $(RMSHW) $$i; done
-	@$(RM_RF) $(NAME)
-	@$(ECHO) $(RMSHW) $(NAME)
+	$(CLRUN)
+	for i in $(OBJ); do $(RM_RF) $$i; $(ECHO) $(RMSHW) $$i; done
+	for i in $(PATHS); do $(RM_RF) $$i; $(ECHO) $(RMSHW) $$i; done
+	$(RM_RF) $(NAME)
+	$(ECHO) $(RMSHW) $(NAME)
 
 re:
-	@$(MAKE) --no-print-directory fclean all
+	$(MAKE) --no-print-directory fclean all
+
+ifndef VERBOSE
+.SILENT:
+endif
 
 endif
