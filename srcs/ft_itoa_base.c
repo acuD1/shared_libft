@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:10:31 by guvillat          #+#    #+#             */
-/*   Updated: 2020/02/29 13:10:17 by fcatusse         ###   ########.fr       */
+/*   Updated: 2020/03/03 18:51:19 by guvillat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ char	*ft_itoa_base(u_int64_t nbr, int base)
 		converted_nbr[i++] = n % base;
 		n /= base;
 	}
-	if (!(str = (char*)malloc(sizeof(char *) * --i)))
+	if (!(str = (char*)malloc(sizeof(char *) * i)))
 		return (NULL);
-	str[i + 1] = '\0';
+	str[i] = '\0';
+	i--;
 	while (i >= 0)
 		str[n++] = hex[converted_nbr[i--]];
 	return (str);
