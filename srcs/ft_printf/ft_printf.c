@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:11 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/02 16:51:03 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/03/04 22:54:39 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+
+char	g_buff[BUFF_MAX];
+int		g_i;
 
 void	ft_buf(char c, PF *argument)
 {
