@@ -6,14 +6,14 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/09 10:52:53 by arsciand          #+#    #+#             */
-/*   Updated: 2020/02/22 15:57:55 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/03/04 23:02:54 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 #include "unistd.h"
 
-static int	check_line(char **stack)
+static int32_t	check_line(char **stack)
 {
 	size_t	i;
 	char	*tmp;
@@ -26,7 +26,7 @@ static int	check_line(char **stack)
 	return (1);
 }
 
-static int	init(const int fd, char **line, char *buff, char **stack)
+static int32_t	init(const int fd, char **line, char *buff, char **stack)
 {
 	if (fd == -1 || FD_MAXSET > 4864 || BUFF_SZ < 1
 			|| !line || read(fd, buff, 0))
@@ -42,7 +42,7 @@ int32_t		ft_getnextline(const int fd, char **line)
 	static char	*stack[FD_MAXSET];
 	char		*buff;
 	char		*tmp;
-	int32_t		ret;
+	ssize_t		ret;
 
 	if (!(buff = ft_memalloc(BUFF_SZ + 1)) || (!init(fd, line, buff, stack)))
 		return (-1);

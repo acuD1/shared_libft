@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_wstrtostr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:14:04 by guvillat          #+#    #+#             */
-/*   Updated: 2019/01/23 15:14:05 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/03/04 23:59:30 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 int		ft_putwchar_in_char(wchar_t wchar, char *fresh, int i)
 {
-	int		size;
+	size_t		size;
 
 	size = ft_wcharlen(wchar);
 	if (size == 1)
-		fresh[i++] = wchar;
+		fresh[i++] = (char)wchar;
 	else if (size == 2)
 	{
-		fresh[i++] = (wchar >> 6) + 0xC0;
-		fresh[i++] = (wchar & 0x3F) + 0x80;
+		fresh[i++] = (char)(wchar >> 6) + 0xC0;
+		fresh[i++] = (char)(wchar & 0x3F) + 0x80;
 	}
 	else if (size == 3)
 	{
-		fresh[i++] = (wchar >> 12) + 0xE0;
-		fresh[i++] = ((wchar >> 6) & 0x3F) + 0x80;
-		fresh[i++] = (wchar & 0x3F) + 0x80;
+		fresh[i++] = (char)(wchar >> 12) + 0xE0;
+		fresh[i++] = (char)((wchar >> 6) & 0x3F) + 0x80;
+		fresh[i++] = (char)(wchar & 0x3F) + 0x80;
 	}
 	else
 	{
-		fresh[i++] = (wchar >> 18) + 0xF0;
-		fresh[i++] = ((wchar >> 12) & 0x3F) + 0x80;
-		fresh[i++] = ((wchar >> 6) & 0x3F) + 0x80;
-		fresh[i++] = (wchar & 0x3F) + 0x80;
+		fresh[i++] = (char)(wchar >> 18) + 0xF0;
+		fresh[i++] = (char)((wchar >> 12) & 0x3F) + 0x80;
+		fresh[i++] = (char)((wchar >> 6) & 0x3F) + 0x80;
+		fresh[i++] = (char)(wchar & 0x3F) + 0x80;
 	}
 	return (i);
 }
@@ -45,7 +45,7 @@ char	*ft_transform_wchar_in_char(wchar_t *ws)
 	char	*fresh;
 	int		i;
 	int		k;
-	int		len;
+	size_t	len;
 
 	if (!ws)
 		return (0);

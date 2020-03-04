@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 13:34:40 by guvillat          #+#    #+#             */
-/*   Updated: 2020/02/07 00:17:35 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/04 23:10:33 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_strlower(char *s)
 {
-	int		i;
+	size_t		i;
 
 	i = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] >= 'A' && s[i] <= 'Z')
-			s[i] = ft_tolower(s[i]);
+			s[i] = (char)ft_tolower(s[i]);
 		i++;
 	}
 	return (s);

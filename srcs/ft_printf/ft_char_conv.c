@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:26:27 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/04 22:51:33 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/04 23:21:53 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int					ft_arg_nospe(PF *argument, va_list ap)
 {
 	char c[2];
 
-	c[0] = argument->spec;
+	c[0] = (char)argument->spec;
 	c[1] = '\0';
 	argument->arg = c;
 	ft_print_character(argument);
@@ -60,7 +60,7 @@ int					character_handler(PF *argument, va_list ap)
 	return (0);
 }
 
-int					ft_print_character(PF *argument)
+ssize_t				ft_print_character(PF *argument)
 {
 	ssize_t		len;
 	ssize_t		padding;

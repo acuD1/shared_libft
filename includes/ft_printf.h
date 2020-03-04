@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:26:05 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/04 22:55:35 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 00:12:38 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@
 # include "shared_libft.h"
 
 extern char				g_buff[BUFF_MAX];
-extern int				g_i;
+extern size_t			g_i;
 
 /*
 ** fla[13] is an array which contains flags for precision, width, flags
@@ -58,14 +58,15 @@ typedef struct s_spec	t_spec;
 
 struct					s_printf
 {
-	char				*format;
 	size_t				index;
-	unsigned char		spec;
-	int					flags[13];
+	char				*format;
 	char				*arg;
 	wchar_t				*warg;
+	int					flags[13];
 	int					ret;
 	int					fd;
+	unsigned char		spec;
+	char				pad[3];
 };
 
 struct					s_spec
@@ -83,7 +84,7 @@ int						ft_dprintf(int fd, const char *format, ...);
 void					ft_display(PF *argument);
 void					*ft_buff(char *str, PF *argument);
 void					ft_buf(char c, PF *argument);
-int						ft_print_character(PF *argument);
+ssize_t					ft_print_character(PF *argument);
 int						ft_print_str(PF *argument);
 int						ft_print_number(PF *argument, char *pre);
 int						ft_print_float(PF *argument, char *pre);
@@ -101,7 +102,7 @@ void					ft_init_spe_tab(SPE *spe);
 ** LIBPRINTF
 */
 
-int						ft_wcharlen(wchar_t wchar);
+size_t					ft_wcharlen(wchar_t wchar);
 size_t					ft_wbytelen(wchar_t *ws);
 void					*ft_strlower(char *s);
 int						ft_wchartostr(char *s, wchar_t wc);
@@ -131,12 +132,12 @@ int						float_handler(PF *argument, va_list ap);
 
 int						ft_wildcard(PF *argument, va_list ap, int index);
 int						ft_get_flags(PF *argu, va_list ap);
-int						ft_check_flags(PF *argu);
-int						ft_check_width(PF *argu, va_list ap);
-int						ft_check_precision(PF *argument, va_list ap);
+size_t					ft_check_flags(PF *argu);
+size_t					ft_check_width(PF *argu, va_list ap);
+size_t					ft_check_precision(PF *argument, va_list ap);
 void					ft_check_length(PF *argu);
-int						ft_check_spec(PF *argument);
-int						ft_check_spec_bis(PF *argument);
+size_t					ft_check_spec(PF *argument);
+size_t					ft_check_spec_bis(PF *argument);
 int						ft_check_format(char *str, PF *argument, va_list ap);
 
 #endif

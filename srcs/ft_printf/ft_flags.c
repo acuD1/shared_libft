@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flags.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:26:53 by guvillat          #+#    #+#             */
-/*   Updated: 2019/01/23 15:26:55 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/03/05 00:01:14 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int		ft_check_width(PF *argu, va_list ap)
+size_t		ft_check_width(PF *argu, va_list ap)
 {
-	int		i;
+	size_t	i;
 	char	*str;
 
 	i = argu->index;
@@ -26,7 +26,7 @@ int		ft_check_width(PF *argu, va_list ap)
 		argu->flags[1] = 0;
 		if (argu->index - i > 0)
 		{
-			str = ft_strsub(argu->format, i, argu->index - i);
+			str = ft_strsub(argu->format, (unsigned char)i, argu->index - i);
 			argu->flags[1] = ft_atoi((const char*)str);
 			ft_strdel(&str);
 		}
@@ -35,9 +35,9 @@ int		ft_check_width(PF *argu, va_list ap)
 	return (argu->index);
 }
 
-int		ft_check_precision(PF *argument, va_list ap)
+size_t		ft_check_precision(PF *argument, va_list ap)
 {
-	int		i;
+	size_t	i;
 	char	*str;
 	int		wild;
 
@@ -52,7 +52,7 @@ int		ft_check_precision(PF *argument, va_list ap)
 			argument->index++;
 		if (argument->index - i > 0)
 		{
-			str = ft_strsub(argument->format, i, argument->index - i);
+			str = ft_strsub(argument->format, (unsigned int)i, argument->index - i);
 			argument->flags[0] = ft_atoi((const char*)str);
 			ft_strdel(&str);
 		}
@@ -60,7 +60,7 @@ int		ft_check_precision(PF *argument, va_list ap)
 	return (argument->index);
 }
 
-int		ft_check_flags(PF *argu)
+size_t		ft_check_flags(PF *argu)
 {
 	while (argu->format[argu->index] == '-' || argu->format[argu->index] == '+'
 		|| argu->format[argu->index] == ' ' || argu->format[argu->index] == '#'
@@ -110,7 +110,7 @@ void	ft_check_length(PF *argu)
 	}
 }
 
-int		ft_check_spec(PF *argument)
+size_t		ft_check_spec(PF *argument)
 {
 	if (argument->format[argument->index] == 's')
 		argument->spec = 's';

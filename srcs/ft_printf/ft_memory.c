@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memory.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:02 by guvillat          #+#    #+#             */
-/*   Updated: 2019/01/23 15:27:04 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/03/05 00:00:39 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ft_init_buff(void)
 	g_i = 0;
 }
 
-int		ft_check_spec_bis(PF *argument)
+size_t		ft_check_spec_bis(PF *argument)
 {
 	if (argument->format[argument->index] == 'c')
 		argument->spec = 'c';
@@ -83,6 +83,6 @@ int		ft_check_spec_bis(PF *argument)
 	else if (argument->format[argument->index] == 'F')
 		argument->spec = 'f';
 	else
-		argument->spec = argument->format[argument->index];
+		argument->spec = (unsigned char)argument->format[argument->index];
 	return (argument->index);
 }

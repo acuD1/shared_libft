@@ -6,20 +6,23 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 12:15:49 by fcatusse          #+#    #+#             */
-/*   Updated: 2019/09/23 13:52:58 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/04 23:17:08 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-int		ft_tablen(char **array)
+size_t	ft_tablen(char **array)
 {
-	int		i;
-	int		count;
+	size_t	i;
+	size_t	count;
 
-	i = -1;
+	i = 0;
 	count = 0;
-	while (array[++i])
+	while (array[i])
+	{
 		count++;
+		i++;
+	}
 	return (count);
 }

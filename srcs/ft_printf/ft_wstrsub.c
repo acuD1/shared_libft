@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 14:05:16 by arsciand          #+#    #+#             */
-/*   Updated: 2019/09/23 14:10:42 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/04 23:52:47 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_wstrsub(wchar_t *ws, unsigned int start, size_t len)
 {
-	int		real_len;
-	int		i;
+	size_t	real_len;
+	size_t	i;
 	char	*fresh;
 
 	real_len = 0;
 	i = 0;
-	while (ws[i] != '\0' && (int)len >= ft_wcharlen(ws[i]))
+	while (ws[i] != '\0' && len >= ft_wcharlen(ws[i]))
 	{
 		len -= ft_wcharlen(ws[i]);
 		real_len += ft_wcharlen(ws[i]);

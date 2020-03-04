@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 14:42:32 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/04 22:22:21 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 00:06:04 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ int				ft_wildcard(PF *argument, va_list ap, int i)
 	return (1);
 }
 
-long double		ft_round(long double nbr, int precision)
+static long double		ft_round(long double nbr, size_t precision)
 {
-	int			i;
+	size_t		i;
 	long double	fl;
 	long double	tt;
-	uintmax_t	curr;
+	u_int64_t	curr;
 
 	curr = 0;
 	tt = nbr;
@@ -49,9 +49,9 @@ long double		ft_round(long double nbr, int precision)
 	i = 0;
 	while (i < precision)
 	{
-		tt = tt - (uintmax_t)tt;
+		tt = tt - (u_int64_t)tt;
 		tt *= 10;
-		curr = (uintmax_t)tt;
+		curr = (u_int64_t)tt;
 		fl /= 10;
 		i++;
 	}
@@ -60,21 +60,21 @@ long double		ft_round(long double nbr, int precision)
 	return (nbr);
 }
 
-char			*ft_getipart(long double nf, PF *argument, int precision)
+static char			*ft_getipart(long double nf, PF *argument, size_t precision)
 {
-	uintmax_t	curr;
+	u_int64_t	curr;
 	char		*tmp;
 	char		*ptr;
-	int			i;
+	size_t		i;
 
 	i = 0;
 	if (!(tmp = ft_strnew(128)))
 		return (NULL);
 	while (i < precision)
 	{
-		nf = nf - (uintmax_t)nf;
+		nf = nf - (u_int64_t)nf;
 		nf *= 10;
-		curr = (uintmax_t)nf % 10;
+		curr = (u_int64_t)nf % 10;
 		ptr = ft_itoa_base_custom(curr, 10);
 		tmp = ft_strncat(tmp, ptr, 1);
 		ft_strdel(&ptr);
@@ -85,16 +85,16 @@ char			*ft_getipart(long double nf, PF *argument, int precision)
 	return (argument->arg);
 }
 
-char			*ft_ftoa(long double nbr, PF *argument, int precision)
+static char			*ft_ftoa(long double nbr, PF *argument, size_t precision)
 {
-	uintmax_t	digit;
+	u_int64_t	digit;
 
-	digit = nbr * 10;
+	digit = (u_int64_t)nbr * 10;
 	digit %= 10;
 	if (!precision)
 		if (digit >= 5)
 			nbr++;
-	argument->arg = ft_itoa_base_custom((uintmax_t)nbr, 10);
+	argument->arg = ft_itoa_base_custom((u_int64_t)nbr, 10);
 	if (precision || argument->flags[2])
 		argument->arg = ft_strncat(argument->arg, ".", 1);
 	if (precision)
@@ -109,13 +109,14 @@ char			*ft_ftoa(long double nbr, PF *argument, int precision)
 int				float_handler(PF *argument, va_list ap)
 {
 	long double	n;
-	int			precision;
+	size_t		precision;
 
 	argument->spec = 'f';
 	n = (long double)va_arg(ap, double);
-	precision = argument->flags[0];
-	if (precision == -1)
+	if (argument->flags[0] == -1)
 		precision = 6;
+	else
+		precision = (size_t)argument->flags[0];
 	if (n >= 0)
 		argument->arg = ft_ftoa(n, argument, precision);
 	else if (n < 0)

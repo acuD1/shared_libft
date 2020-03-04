@@ -6,19 +6,19 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:37 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/04 22:22:21 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 00:11:05 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static intmax_t		signed_cast(PF *argument, va_list ap)
+static int64_t		signed_cast(PF *argument, va_list ap)
 {
-	intmax_t	n;
+	int64_t	n;
 
-	n = va_arg(ap, intmax_t);
+	n = va_arg(ap, int64_t);
 	if (argument->flags[12] == 1)
-		n = (size_t)n;
+		return (n);
 	else if (argument->flags[11] == 1)
 		return (n);
 	else if (argument->flags[9] == 1)
@@ -55,15 +55,15 @@ static void			test_string(PF *args)
 
 int					signed_handler(PF *argument, va_list ap)
 {
-	intmax_t	n;
+	int64_t	n;
 
 	n = (argument->spec == 'd' || argument->spec == 'i') ?
-	signed_cast(argument, ap) : (long int)va_arg(ap, intmax_t);
+	signed_cast(argument, ap) : (long int)va_arg(ap, int64_t);
 	if (n >= 0)
-		argument->arg = ft_itoa_base_custom(n, 10);
+		argument->arg = ft_itoa_base_custom((u_int64_t)n, 10);
 	else if (n < 0)
 	{
-		argument->arg = ft_itoa_base_custom(-n, 10);
+		argument->arg = ft_itoa_base_custom(-(u_int64_t)n, 10);
 		return (ft_print_number(argument, "-"));
 	}
 	if (argument->flags[5])
@@ -89,12 +89,12 @@ int					ft_print_number(PF *argument, char *pre)
 	int		padding;
 
 	test_string(argument);
-	len = ft_strlen(argument->arg);
+	len = (int)ft_strlen(argument->arg);
 	precision = 0;
 	padding = 0;
 	if (argument->flags[0] > len)
 		precision = argument->flags[0] - len;
-	len += ft_strlen(pre) + precision;
+	len += (int)ft_strlen(pre) + precision;
 	if (argument->flags[1] > len)
 		padding = argument->flags[1] - len;
 	if (argument->flags[4] == 0 && (argument->flags[3] == 0

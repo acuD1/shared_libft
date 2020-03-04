@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 11:41:04 by fcatusse          #+#    #+#             */
-/*   Updated: 2020/02/07 00:17:25 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/04 23:09:38 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 size_t	ft_strlen_to(const char *s, char c)
 {
-	int		i;
+	size_t	i;
 
-	i = -1;
-	while (s[++i])
+	i = 0;
+	while (s[i])
+	{
 		if (s[i] == c)
 			return (i);
+	}
 	return (i);
 }

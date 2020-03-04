@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpivet-p <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 14:43:41 by mpivet-p          #+#    #+#             */
-/*   Updated: 2020/02/22 19:05:36 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/03/04 23:05:29 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 static void	my_cat(char *dest, char *src)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (src[i])
@@ -29,11 +29,11 @@ static void	my_cat(char *dest, char *src)
 	dest[i] = 0;
 }
 
-static int	read_line(char **line, char *buffer, int fd, char *tmp)
+static u_int8_t	read_line(char **line, char *buffer, int fd, char *tmp)
 {
 	char	*tml;
-	int		ret;
-	int		i;
+	ssize_t	ret;
+	size_t	i;
 
 	i = 0;
 	while ((ret = read(fd, buffer, BUFF_MAX)) > 0)
@@ -41,7 +41,7 @@ static int	read_line(char **line, char *buffer, int fd, char *tmp)
 		remove_invalid_char(buffer);
 		if (ft_strchr(buffer, '\n') != NULL)
 		{
-			i = ft_strchr(buffer, '\n') - buffer;
+			i = (size_t)(ft_strchr(buffer, '\n') - buffer);
 			tml = ft_strsub(buffer, 0, i);
 			tmp = ft_strjoin(*line, tml);
 			my_cat(buffer, buffer + i + 1);
@@ -62,7 +62,7 @@ int			get_next_line(int fd, char **line)
 {
 	static char	buffer[BUFF_MAX + 1];
 	char		*tmp;
-	int			i;
+	size_t		i;
 
 	tmp = NULL;
 	i = 0;
@@ -70,7 +70,7 @@ int			get_next_line(int fd, char **line)
 		return (-1);
 	if (ft_strchr(buffer, '\n') != NULL)
 	{
-		i = ft_strchr(buffer, '\n') - buffer;
+		i = (size_t)(ft_strchr(buffer, '\n') - buffer);
 		*line = ft_strsub(buffer, 0, i);
 		my_cat(buffer, buffer + i + 1);
 		return (1);

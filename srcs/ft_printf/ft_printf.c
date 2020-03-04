@@ -6,14 +6,14 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:11 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/04 22:54:39 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 00:12:50 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
 char	g_buff[BUFF_MAX];
-int		g_i;
+size_t	g_i;
 
 void	ft_buf(char c, PF *argument)
 {
@@ -52,7 +52,7 @@ int		ft_get_flags(PF *argu, va_list ap)
 	ft_check_spec(argu);
 	if (argu->index == ft_strlen(argu->format))
 		return (-1);
-	return (argu->index);
+	return ((int)argu->index);
 }
 
 int		ft_check_format(char *str, PF *argument, va_list ap)

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_wcharlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:13:31 by guvillat          #+#    #+#             */
-/*   Updated: 2019/01/23 15:13:32 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/03/04 23:51:00 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int			ft_wcharlen(wchar_t wchar)
+size_t			ft_wcharlen(wchar_t wchar)
 {
 	if (wchar <= 0x7f)
 		return (1);
@@ -33,7 +33,7 @@ size_t		ft_wbytelen(wchar_t *ws)
 	bytelen = 0;
 	while (len > 0)
 	{
-		bytelen += ft_wcharlen(*ws);
+		bytelen += (size_t)ft_wcharlen(*ws);
 		ws++;
 		len--;
 	}

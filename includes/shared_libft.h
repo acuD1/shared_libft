@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/03/04 22:20:46 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/04 23:16:41 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char				**ft_tabchr(char **tab_src, char *str);
 char				**ft_tabcopy(char **tab_dest, char **tab_copy);
 void				ft_tabdel(char ***array);
 void				ft_tabfree(char **array);
-int					ft_tablen(char **array);
+size_t				ft_tablen(char **array);
 int					ft_tolower(int c);
 int					skip_opt(char **argv);
 char				*ft_realloc(char *ptr, size_t size);

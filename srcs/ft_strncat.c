@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 13:38:06 by guvillat          #+#    #+#             */
-/*   Updated: 2020/02/07 00:17:42 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/04 23:11:04 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strncat(char *dest, const char *src, size_t n)
 {
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 
 	i = ft_strlen(dest);
 	j = 0;
