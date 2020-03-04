@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_unsigned_conv.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:51 by guvillat          #+#    #+#             */
-/*   Updated: 2019/01/23 15:27:52 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/03/04 22:22:21 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,15 @@ int						unsigned_handler(PF *argument, va_list ap)
 	else
 		n = (unsigned long int)va_arg(ap, uintmax_t);
 	if (argument->spec == 'o' || argument->spec == 'O')
-		argument->arg = ft_itoa_base(n, 8);
+		argument->arg = ft_itoa_base_custom(n, 8);
 	else if (argument->spec == 'u' || argument->spec == 'U')
-		argument->arg = ft_itoa_base(n, 10);
+		argument->arg = ft_itoa_base_custom(n, 10);
 	else if (argument->spec == 'x')
-		argument->arg = ft_strlower(ft_itoa_base(n, 16));
+		argument->arg = ft_strlower(ft_itoa_base_custom(n, 16));
 	else if (argument->spec == 'b')
-		argument->arg = ft_itoa_base(n, 2);
+		argument->arg = ft_itoa_base_custom(n, 2);
 	else
-		argument->arg = ft_itoa_base(n, 16);
+		argument->arg = ft_itoa_base_custom(n, 16);
 	return (unsigned_helper(argument));
 }
 
@@ -91,7 +91,7 @@ int						pointer_handler(PF *argument, va_list ap)
 	uintmax_t			n;
 
 	n = va_arg(ap, uintmax_t);
-	argument->arg = ft_itoa_base(n, 16);
+	argument->arg = ft_itoa_base_custom(n, 16);
 	argument->arg = ft_strlower(argument->arg);
 	return (ft_print_number(argument, "0x"));
 }

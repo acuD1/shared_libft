@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_signed_conv.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:37 by guvillat          #+#    #+#             */
-/*   Updated: 2019/01/23 15:27:38 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/03/04 22:22:21 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ int					signed_handler(PF *argument, va_list ap)
 	n = (argument->spec == 'd' || argument->spec == 'i') ?
 	signed_cast(argument, ap) : (long int)va_arg(ap, intmax_t);
 	if (n >= 0)
-		argument->arg = ft_itoa_base(n, 10);
+		argument->arg = ft_itoa_base_custom(n, 10);
 	else if (n < 0)
 	{
-		argument->arg = ft_itoa_base(-n, 10);
+		argument->arg = ft_itoa_base_custom(-n, 10);
 		return (ft_print_number(argument, "-"));
 	}
 	if (argument->flags[5])

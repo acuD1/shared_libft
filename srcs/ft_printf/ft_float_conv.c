@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_float_conv.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 14:42:32 by guvillat          #+#    #+#             */
-/*   Updated: 2019/01/28 14:42:33 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/03/04 22:22:21 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char			*ft_getipart(long double nf, PF *argument, int precision)
 		nf = nf - (uintmax_t)nf;
 		nf *= 10;
 		curr = (uintmax_t)nf % 10;
-		ptr = ft_itoa_base(curr, 10);
+		ptr = ft_itoa_base_custom(curr, 10);
 		tmp = ft_strncat(tmp, ptr, 1);
 		ft_strdel(&ptr);
 		i++;
@@ -94,7 +94,7 @@ char			*ft_ftoa(long double nbr, PF *argument, int precision)
 	if (!precision)
 		if (digit >= 5)
 			nbr++;
-	argument->arg = ft_itoa_base((uintmax_t)nbr, 10);
+	argument->arg = ft_itoa_base_custom((uintmax_t)nbr, 10);
 	if (precision || argument->flags[2])
 		argument->arg = ft_strncat(argument->arg, ".", 1);
 	if (precision)

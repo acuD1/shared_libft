@@ -73,6 +73,7 @@ SRC				+=	$(S_PATH)ft_isdigit.c
 SRC				+=	$(S_PATH)ft_isnum.c
 SRC				+=	$(S_PATH)ft_isstart.c
 SRC				+=	$(S_PATH)ft_itoa_base.c
+SRC				+=	$(S_PATH)ft_itoa_base_custom.c
 SRC				+=	$(S_PATH)ft_itoa.c
 SRC				+=	$(S_PATH)ft_itoabuf.c
 SRC				+=	$(S_PATH)ft_lstappend.c
