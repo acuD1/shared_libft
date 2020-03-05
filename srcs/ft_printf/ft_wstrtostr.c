@@ -6,13 +6,13 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:14:04 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/04 23:59:30 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 02:30:16 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
-int		ft_putwchar_in_char(wchar_t wchar, char *fresh, int i)
+size_t	ft_putwchar_in_char(wchar_t wchar, char *fresh, size_t i)
 {
 	size_t		size;
 
@@ -43,8 +43,8 @@ int		ft_putwchar_in_char(wchar_t wchar, char *fresh, int i)
 char	*ft_transform_wchar_in_char(wchar_t *ws)
 {
 	char	*fresh;
-	int		i;
-	int		k;
+	size_t	i;
+	size_t	k;
 	size_t	len;
 
 	if (!ws)

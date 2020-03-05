@@ -6,11 +6,11 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:43 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 01:31:22 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 03:02:58 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 void			ft_display(PF *argument)
 {
@@ -18,7 +18,7 @@ void			ft_display(PF *argument)
 	ft_init_buff();
 }
 
-static int		wstring_handler(PF *argument, va_list ap)
+static u_int8_t	wstring_handler(PF *argument, va_list ap)
 {
 	ssize_t len;
 
@@ -35,7 +35,7 @@ static int		wstring_handler(PF *argument, va_list ap)
 	return (ft_print_str(argument));
 }
 
-int				string_handler(PF *argument, va_list ap)
+u_int8_t		string_handler(PF *argument, va_list ap)
 {
 	ssize_t len;
 	char	*tmp;
@@ -56,15 +56,13 @@ int				string_handler(PF *argument, va_list ap)
 	return (ft_print_str(argument));
 }
 
-int				ft_print_str(PF *argument)
+u_int8_t		ft_print_str(PF *argument)
 {
 	ssize_t		len;
 	ssize_t		padding;
-	int			i;
 
-	i = -1;
 	if (!argument->arg)
-		return (-1);
+		return (0);
 	len = (ssize_t)ft_strlen(argument->arg);
 	padding = 0;
 	if (argument->flags[0] > -1 && argument->flags[0] < len)

@@ -6,13 +6,13 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:51 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 00:06:04 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 03:03:19 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
-static u_int64_t		unsigned_cast(PF *argument, va_list ap)
+static u_int64_t	unsigned_cast(PF *argument, va_list ap)
 {
 	u_int64_t			n;
 
@@ -34,7 +34,7 @@ static u_int64_t		unsigned_cast(PF *argument, va_list ap)
 	return (n);
 }
 
-static int				unsigned_helper(PF *argument)
+static u_int8_t		unsigned_helper(PF *argument)
 {
 	ssize_t				len;
 	int					nullstr;
@@ -56,7 +56,7 @@ static int				unsigned_helper(PF *argument)
 	return (ft_print_number(argument, ""));
 }
 
-int						unsigned_handler(PF *argument, va_list ap)
+u_int8_t			unsigned_handler(PF *argument, va_list ap)
 {
 	u_int64_t			n;
 
@@ -79,14 +79,14 @@ int						unsigned_handler(PF *argument, va_list ap)
 	return (unsigned_helper(argument));
 }
 
-int						prc_handler(PF *argument, va_list ap)
+u_int8_t			prc_handler(PF *argument, va_list ap)
 {
 	argument->arg = "%";
 	ft_print_character(argument);
-	return ((int)ap);
+	return ((u_int8_t)ap);
 }
 
-int						pointer_handler(PF *argument, va_list ap)
+u_int8_t			pointer_handler(PF *argument, va_list ap)
 {
 	u_int64_t			n;
 

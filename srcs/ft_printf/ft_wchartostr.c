@@ -6,13 +6,13 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:13:42 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/04 23:48:50 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 02:28:22 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
-static int		ft_wchartostr_bis(char *s, wchar_t wc)
+static u_int8_t	ft_wchartostr_bis(char *s, wchar_t wc)
 {
 	if (wc < 0x800)
 	{
@@ -38,7 +38,7 @@ static int		ft_wchartostr_bis(char *s, wchar_t wc)
 	return (0);
 }
 
-int				ft_wchartostr(char *s, wchar_t wc)
+u_int8_t		ft_wchartostr(char *s, wchar_t wc)
 {
 	if (wc < 0x80)
 	{

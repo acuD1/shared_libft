@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/03/05 01:28:15 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:46:23 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # define BUFF_SZ	4096
 # define FD_MAXSET	4864
+# define SUCCESS	0
+# define FAILURE	-1
+# define FALSE		0
+# define TRUE		1
 
 # include "ft_printf.h"
 

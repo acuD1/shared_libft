@@ -6,15 +6,15 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:02 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 01:31:03 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:59:58 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 PF		*ft_init_argument(PF *argument)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
 	while (i < 13)
@@ -34,7 +34,7 @@ PF		*ft_init_argument(PF *argument)
 
 void	ft_init_spe_tab(SPE *spe)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
 	while (i < 128)
@@ -61,7 +61,7 @@ void	ft_init_spe_tab(SPE *spe)
 
 void	ft_init_buff(void)
 {
-	int n;
+	size_t	n;
 
 	n = 0;
 	while (n < BUFF_MAX)

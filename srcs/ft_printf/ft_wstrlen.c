@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_wstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:13:53 by guvillat          #+#    #+#             */
-/*   Updated: 2019/01/23 15:13:55 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/03/05 03:03:28 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
-size_t		ft_wstrlen(wchar_t *ws)
+size_t	ft_wstrlen(wchar_t *ws)
 {
 	size_t	len;
 

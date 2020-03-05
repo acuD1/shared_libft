@@ -6,11 +6,11 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:26:53 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 01:29:45 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 02:12:33 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 size_t	ft_check_width(PF *argu, va_list ap)
 {
@@ -27,7 +27,7 @@ size_t	ft_check_width(PF *argu, va_list ap)
 		if (argu->index - i > 0)
 		{
 			str = ft_strsub(argu->format, (unsigned char)i, argu->index - i);
-			argu->flags[1] = ft_atoi((const char*)str);
+			argu->flags[1] = (int8_t)ft_atoi((const char*)str);
 			ft_strdel(&str);
 		}
 	}
@@ -39,14 +39,13 @@ size_t	ft_check_precision(PF *argument, va_list ap)
 {
 	size_t	i;
 	char	*str;
-	int		wild;
 
 	if (argument->format[argument->index] == '.')
 	{
 		i = ++argument->index;
 		argument->flags[0] = 0;
 		if (argument->format[argument->index] == '*')
-			wild = ft_wildcard(argument, ap, 0);
+			ft_wildcard(argument, ap, 0);
 		i = argument->index;
 		while (ft_isdigit(argument->format[argument->index]))
 			argument->index++;
@@ -54,7 +53,7 @@ size_t	ft_check_precision(PF *argument, va_list ap)
 		{
 			str = ft_strsub(argument->format,
 					(unsigned int)i, argument->index - i);
-			argument->flags[0] = ft_atoi((const char*)str);
+			argument->flags[0] = (int8_t)ft_atoi((const char*)str);
 			ft_strdel(&str);
 		}
 	}

@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_nputchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:12:13 by guvillat          #+#    #+#             */
-/*   Updated: 2019/01/23 15:12:18 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/03/05 02:22:12 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
-void		ft_nputchar(char c, ssize_t n, PF *argument)
+void	ft_nputchar(char c, ssize_t n, PF *argument)
 {
-	ssize_t	i;
 	char	s[2];
+	ssize_t	i;
 
 	s[0] = c;
 	s[1] = '\0';

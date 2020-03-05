@@ -6,26 +6,26 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:26:27 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 00:56:59 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 03:02:02 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
-int					ft_arg_nospe(PF *argument, va_list ap)
+u_int8_t		ft_arg_nospe(PF *argument, va_list ap)
 {
-	char c[2];
+	char	c[2];
 
 	c[0] = (char)argument->spec;
 	c[1] = '\0';
 	argument->arg = c;
 	ft_print_character(argument);
-	return ((int)ap);
+	return ((u_int8_t)ap);
 }
 
-static int			wchar_handler(va_list ap, PF *argument)
+static u_int8_t	wchar_handler(va_list ap, PF *argument)
 {
-	wint_t			c;
+	wint_t	c;
 
 	c = (wint_t)va_arg(ap, wint_t);
 	argument->spec = 'C';
@@ -39,13 +39,13 @@ static int			wchar_handler(va_list ap, PF *argument)
 		return (0);
 	}
 	if (!(argument->arg = ft_strnew(4)))
-		return (-1);
+		return (0);
 	ft_wchartostr(argument->arg, (wint_t)c);
 	ft_print_str(argument);
 	return (0);
 }
 
-int					character_handler(PF *argument, va_list ap)
+u_int8_t		character_handler(PF *argument, va_list ap)
 {
 	char	c[2];
 
@@ -58,10 +58,10 @@ int					character_handler(PF *argument, va_list ap)
 	return (0);
 }
 
-ssize_t				ft_print_character(PF *argument)
+ssize_t			ft_print_character(PF *argument)
 {
-	ssize_t		len;
-	ssize_t		padding;
+	ssize_t	len;
+	ssize_t	padding;
 
 	len = 1;
 	padding = 0;

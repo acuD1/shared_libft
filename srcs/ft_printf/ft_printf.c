@@ -6,11 +6,11 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:11 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 00:12:50 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:57:35 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 char	g_buff[BUFF_MAX];
 size_t	g_i;
@@ -33,7 +33,7 @@ void	*ft_buff(char *str, PF *argument)
 	return (NULL);
 }
 
-int		ft_get_flags(PF *argu, va_list ap)
+int8_t	ft_get_flags(PF *argu, va_list ap)
 {
 	argu->index = 0;
 	while (argu->format[argu->index] == '#' || argu->format[argu->index] == '0'
@@ -51,32 +51,32 @@ int		ft_get_flags(PF *argu, va_list ap)
 	}
 	ft_check_spec(argu);
 	if (argu->index == ft_strlen(argu->format))
-		return (-1);
-	return ((int)argu->index);
+		return (FAILURE);
+	return (SUCCESS);
 }
 
-int		ft_check_format(char *str, PF *argument, va_list ap)
+void	ft_check_format(char *str, PF *argument, va_list ap)
 {
-	int i;
-	SPE spe[128];
+	SPE		spe[128];
+	size_t	i;
 
-	i = -1;
+	i = 0;
 	ft_init_spe_tab(spe);
-	while (str[++i] != '\0')
+	while (str[i] != '\0')
 	{
 		if (str[i] == '%')
 		{
 			ft_init_argument(argument);
 			argument->format = &str[++i];
-			if (ft_get_flags(argument, ap) == -1)
-				return (-1);
+			if (ft_get_flags(argument, ap) != SUCCESS)
+				return ;
 			spe->spe[argument->spec](argument, ap);
 			i += argument->index;
 		}
 		else if (str[i] != '%' && str[i] != '\0')
 			ft_buf(str[i], argument);
+		i++;
 	}
-	return (0);
 }
 
 int		ft_printf(const char *format, ...)

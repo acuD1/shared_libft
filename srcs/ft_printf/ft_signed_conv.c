@@ -6,13 +6,13 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:37 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 00:11:05 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 03:02:43 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
-static int64_t		signed_cast(PF *argument, va_list ap)
+static int64_t	signed_cast(PF *argument, va_list ap)
 {
 	int64_t	n;
 
@@ -22,21 +22,21 @@ static int64_t		signed_cast(PF *argument, va_list ap)
 	else if (argument->flags[11] == 1)
 		return (n);
 	else if (argument->flags[9] == 1)
-		n = (long long)n;
+		n = (int64_t)n;
 	else if (argument->flags[10] == 1)
 		n = (long)n;
 	else if (argument->flags[8] == 1)
-		n = (short)n;
+		n = (int16_t)n;
 	else if (argument->flags[7] == 1)
 		n = (char)n;
 	else
-		n = (int)n;
+		n = (int32_t)n;
 	return (n);
 }
 
-static void			test_string(PF *args)
+static void		test_string(PF *args)
 {
-	int			octal;
+	u_int8_t	octal;
 
 	if (!args->arg)
 		return ;
@@ -53,7 +53,7 @@ static void			test_string(PF *args)
 	}
 }
 
-int					signed_handler(PF *argument, va_list ap)
+u_int8_t		signed_handler(PF *argument, va_list ap)
 {
 	int64_t	n;
 
@@ -73,7 +73,7 @@ int					signed_handler(PF *argument, va_list ap)
 	return (ft_print_number(argument, ""));
 }
 
-static int			ft_print_number_bis(PF *argument, int padding)
+static u_int8_t	ft_print_number_bis(PF *argument, ssize_t padding)
 {
 	ft_buff(argument->arg, argument);
 	if (argument->flags[4] == 1)
@@ -82,21 +82,21 @@ static int			ft_print_number_bis(PF *argument, int padding)
 	return (0);
 }
 
-int					ft_print_number(PF *argument, char *pre)
+u_int8_t		ft_print_number(PF *argument, char *pre)
 {
-	int		len;
-	int		precision;
-	int		padding;
+	ssize_t	len;
+	ssize_t	precision;
+	ssize_t	padding;
 
 	test_string(argument);
-	len = (int)ft_strlen(argument->arg);
+	len = (ssize_t)ft_strlen(argument->arg);
 	precision = 0;
 	padding = 0;
 	if (argument->flags[0] > len)
-		precision = argument->flags[0] - len;
-	len += (int)ft_strlen(pre) + precision;
+		precision = (ssize_t)argument->flags[0] - len;
+	len += (ssize_t)ft_strlen(pre) + precision;
 	if (argument->flags[1] > len)
-		padding = argument->flags[1] - len;
+		padding = (ssize_t)argument->flags[1] - len;
 	if (argument->flags[4] == 0 && (argument->flags[3] == 0
 		|| argument->flags[0] != -1))
 		ft_nputchar(' ', padding, argument);

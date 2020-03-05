@@ -6,17 +6,17 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 14:42:32 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 01:30:34 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 03:02:20 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
-int					ft_wildcard(PF *argument, va_list ap, int i)
+void				ft_wildcard(PF *argument, va_list ap, size_t i)
 {
 	if (argument->format[argument->index] == '*')
 	{
-		argument->flags[i] = va_arg(ap, int);
+		argument->flags[i] = (int8_t)va_arg(ap, int);
 		if (argument->flags[i] < 0)
 		{
 			if (i == 1)
@@ -28,20 +28,19 @@ int					ft_wildcard(PF *argument, va_list ap, int i)
 			{
 				argument->flags[0] = -1;
 				argument->index++;
-				return (0);
+				return ;
 			}
 		}
 		argument->index++;
 	}
-	return (1);
 }
 
 static long double	ft_round(long double nbr, size_t precision)
 {
-	size_t		i;
 	long double	fl;
 	long double	tt;
 	u_int64_t	curr;
+	size_t		i;
 
 	curr = 0;
 	tt = nbr;
@@ -62,9 +61,9 @@ static long double	ft_round(long double nbr, size_t precision)
 
 static char			*ft_getipart(long double nf, PF *argument, size_t precision)
 {
-	u_int64_t	curr;
 	char		*tmp;
 	char		*ptr;
+	u_int64_t	curr;
 	size_t		i;
 
 	i = 0;
@@ -106,7 +105,7 @@ static char			*ft_ftoa(long double nbr, PF *argument, size_t precision)
 	return (argument->arg);
 }
 
-int					float_handler(PF *argument, va_list ap)
+u_int8_t			float_handler(PF *argument, va_list ap)
 {
 	long double	n;
 	size_t		precision;

@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:26:05 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 01:28:19 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 03:04:51 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,20 +58,20 @@ typedef struct s_spec	t_spec;
 
 struct					s_printf
 {
-	size_t				index;
 	char				*format;
 	char				*arg;
+	size_t				index;
 	wchar_t				*warg;
-	int					flags[13];
-	int					ret;
+	int32_t				ret;
 	int					fd;
+	int8_t				flags[13];
 	unsigned char		spec;
-	char				pad[3];
+	char				pad[2];
 };
 
 struct					s_spec
 {
-	int					(*spe[128])(PF*, va_list);
+	u_int8_t			(*spe[128])(PF*, va_list);
 };
 
 int						ft_printf(const char *format, ...);
@@ -85,15 +85,13 @@ void					ft_display(PF *argument);
 void					*ft_buff(char *str, PF *argument);
 void					ft_buf(char c, PF *argument);
 ssize_t					ft_print_character(PF *argument);
-int						ft_print_str(PF *argument);
-int						ft_print_number(PF *argument, char *pre);
-int						ft_print_float(PF *argument, char *pre);
+u_int8_t				ft_print_str(PF *argument);
+u_int8_t				ft_print_number(PF *argument, char *pre);
 
 /*
 ** MEMORY
 */
 
-void					ft_free(PF *argument);
 void					ft_init_buff(void);
 PF						*ft_init_argument(PF *argument);
 void					ft_init_spe_tab(SPE *spe);
@@ -104,41 +102,40 @@ void					ft_init_spe_tab(SPE *spe);
 
 size_t					ft_wcharlen(wchar_t wchar);
 size_t					ft_wbytelen(wchar_t *ws);
-void					*ft_strlower(char *s);
-int						ft_wchartostr(char *s, wchar_t wc);
+u_int8_t				ft_wchartostr(char *s, wchar_t wc);
 void					ft_nputchar(char c, ssize_t n, PF *argument);
 size_t					ft_wstrlen(wchar_t *s);
-int						ft_wstrtostr(char *s, wchar_t *wstr, int n);
 char					*ft_wstrsub
 							(wchar_t *ws, unsigned int start, size_t len);
 char					*ft_transform_wchar_in_char(wchar_t *ws);
-int						ft_putwchar_in_char(wchar_t wchar, char *fresh, int i);
+size_t					ft_putwchar_in_char
+							(wchar_t wchar, char *fresh, size_t i);
 
 /*
 ** HANDLER
 */
 
-int						signed_handler(PF *argument, va_list ap);
-int						pointer_handler(PF *argument, va_list ap);
-int						character_handler(PF *argument, va_list ap);
-int						string_handler(PF *argument, va_list ap);
-int						unsigned_handler(PF *argument, va_list ap);
-int						ft_arg_nospe(PF *argument, va_list ap);
-int						prc_handler(PF *argument, va_list ap);
-int						float_handler(PF *argument, va_list ap);
+u_int8_t				signed_handler(PF *argument, va_list ap);
+u_int8_t				pointer_handler(PF *argument, va_list ap);
+u_int8_t				character_handler(PF *argument, va_list ap);
+u_int8_t				string_handler(PF *argument, va_list ap);
+u_int8_t				unsigned_handler(PF *argument, va_list ap);
+u_int8_t				ft_arg_nospe(PF *argument, va_list ap);
+u_int8_t				prc_handler(PF *argument, va_list ap);
+u_int8_t				float_handler(PF *argument, va_list ap);
 
 /*
 ** FLAGS
 */
 
-int						ft_wildcard(PF *argument, va_list ap, int index);
-int						ft_get_flags(PF *argu, va_list ap);
+void					ft_wildcard(PF *argument, va_list ap, size_t index);
+int8_t					ft_get_flags(PF *argu, va_list ap);
 size_t					ft_check_flags(PF *argu);
 size_t					ft_check_width(PF *argu, va_list ap);
 size_t					ft_check_precision(PF *argument, va_list ap);
 void					ft_check_length(PF *argu);
 size_t					ft_check_spec(PF *argument);
 size_t					ft_check_spec_bis(PF *argument);
-int						ft_check_format(char *str, PF *argument, va_list ap);
+void					ft_check_format(char *str, PF *argument, va_list ap);
 
 #endif
