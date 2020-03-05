@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/09 10:52:53 by arsciand          #+#    #+#             */
-/*   Updated: 2020/03/04 23:02:54 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:21:58 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 static int32_t	check_line(char **stack)
 {
-	size_t	i;
 	char	*tmp;
+	size_t	i;
 
 	i = 0;
 	tmp = *stack;
@@ -37,7 +37,7 @@ static int32_t	init(const int fd, char **line, char *buff, char **stack)
 	return (1);
 }
 
-int32_t		ft_getnextline(const int fd, char **line)
+int32_t			ft_getnextline(const int fd, char **line)
 {
 	static char	*stack[FD_MAXSET];
 	char		*buff;

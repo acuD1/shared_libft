@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strisdigit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 14:59:58 by guvillat          #+#    #+#             */
-/*   Updated: 2020/02/22 19:03:41 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:23:44 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-int	ft_strisdigit(const char *str)
+size_t	ft_strisdigit(const char *str)
 {
-	int index;
+	size_t	index;
 
 	index = 0;
 	if (str)

@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/09 10:51:25 by arsciand          #+#    #+#             */
-/*   Updated: 2020/02/07 00:05:18 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:24:26 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strsub(const char *s, unsigned int start, size_t len)
 {
-	size_t	i;
 	char	*dst;
+	size_t	i;
 
 	i = 0;
 	if (!s)

@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:10:31 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/04 19:42:10 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:05:09 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ char		*ft_itoa_base(int32_t nbr, int32_t base)
 {
 	static char	hex[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
 	'A', 'B', 'C', 'D', 'E', 'F'};
+	u_int64_t	converted_nbr[64];
 	u_int64_t	n;
 	int64_t		i;
-	u_int64_t	converted_nbr[64];
 
 	if (base < 2 || base > 16)
 		return (NULL);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guvillat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 15:00:52 by guvillat          #+#    #+#             */
-/*   Updated: 2020/02/11 15:01:11 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:12:43 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
+u_int8_t	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
 	while (n-- && *s1 && *s2)
 	{

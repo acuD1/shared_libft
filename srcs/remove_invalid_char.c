@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   remove_invalid_char.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpivet-p <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 18:53:19 by mpivet-p          #+#    #+#             */
-/*   Updated: 2020/02/22 19:04:07 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:17:40 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 **	Only working with BUFF_SIZE
 */
 
-static void	move_till_end(char *buff, int i)
+static void		move_till_end(char *buff, size_t i)
 {
 	while (i < BUFF_MAX)
 	{
@@ -25,7 +25,7 @@ static void	move_till_end(char *buff, int i)
 	}
 }
 
-static int	is_done(char *buff, int i)
+static u_int8_t	is_done(char *buff, size_t i)
 {
 	while (i < BUFF_MAX)
 	{
@@ -36,9 +36,9 @@ static int	is_done(char *buff, int i)
 	return (1);
 }
 
-void		remove_invalid_char(char *buff)
+void			remove_invalid_char(char *buff)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < BUFF_MAX)

@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:02 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 00:00:39 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:31:03 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ft_init_buff(void)
 	g_i = 0;
 }
 
-size_t		ft_check_spec_bis(PF *argument)
+size_t	ft_check_spec_bis(PF *argument)
 {
 	if (argument->format[argument->index] == 'c')
 		argument->spec = 'c';

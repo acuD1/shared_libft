@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 13:42:24 by guvillat          #+#    #+#             */
-/*   Updated: 2020/02/07 00:18:06 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:13:38 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strstr(const char *big, const char *little)
 {
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 
 	if (!*little)
 		return ((char*)big);

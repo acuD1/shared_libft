@@ -6,13 +6,13 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:26:53 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 00:01:14 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:29:45 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-size_t		ft_check_width(PF *argu, va_list ap)
+size_t	ft_check_width(PF *argu, va_list ap)
 {
 	size_t	i;
 	char	*str;
@@ -35,7 +35,7 @@ size_t		ft_check_width(PF *argu, va_list ap)
 	return (argu->index);
 }
 
-size_t		ft_check_precision(PF *argument, va_list ap)
+size_t	ft_check_precision(PF *argument, va_list ap)
 {
 	size_t	i;
 	char	*str;
@@ -52,7 +52,8 @@ size_t		ft_check_precision(PF *argument, va_list ap)
 			argument->index++;
 		if (argument->index - i > 0)
 		{
-			str = ft_strsub(argument->format, (unsigned int)i, argument->index - i);
+			str = ft_strsub(argument->format,
+					(unsigned int)i, argument->index - i);
 			argument->flags[0] = ft_atoi((const char*)str);
 			ft_strdel(&str);
 		}
@@ -60,7 +61,7 @@ size_t		ft_check_precision(PF *argument, va_list ap)
 	return (argument->index);
 }
 
-size_t		ft_check_flags(PF *argu)
+size_t	ft_check_flags(PF *argu)
 {
 	while (argu->format[argu->index] == '-' || argu->format[argu->index] == '+'
 		|| argu->format[argu->index] == ' ' || argu->format[argu->index] == '#'
@@ -110,7 +111,7 @@ void	ft_check_length(PF *argu)
 	}
 }
 
-size_t		ft_check_spec(PF *argument)
+size_t	ft_check_spec(PF *argument)
 {
 	if (argument->format[argument->index] == 's')
 		argument->spec = 's';

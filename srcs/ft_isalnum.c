@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpivet-p <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 04:19:04 by mpivet-p          #+#    #+#             */
-/*   Updated: 2019/09/30 05:12:00 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:20:01 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-int8_t		ft_isalnum(int c)
+int8_t	ft_isalnum(int16_t c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
 			|| (c >= '0' && c <= '9'))

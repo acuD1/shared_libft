@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/09 10:50:24 by arsciand          #+#    #+#             */
-/*   Updated: 2020/03/04 23:15:31 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:24:14 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ static size_t	count_words(const char *s, char *charset)
 
 char			**ft_strsplit(const char *s, char *charset)
 {
+	char	**tab;
 	size_t	i;
 	size_t	len;
 	size_t	j;
-	char	**tab;
 
 	i = 0;
 	j = 0;

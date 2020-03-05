@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:26:05 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 00:12:38 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:28:19 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,8 @@ int						ft_wchartostr(char *s, wchar_t wc);
 void					ft_nputchar(char c, ssize_t n, PF *argument);
 size_t					ft_wstrlen(wchar_t *s);
 int						ft_wstrtostr(char *s, wchar_t *wstr, int n);
-char					*ft_wstrsub(wchar_t *ws, unsigned int start, size_t len);
+char					*ft_wstrsub
+							(wchar_t *ws, unsigned int start, size_t len);
 char					*ft_transform_wchar_in_char(wchar_t *ws);
 int						ft_putwchar_in_char(wchar_t wchar, char *fresh, int i);
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpivet-p <mpivet-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:09:27 by mpivet-p          #+#    #+#             */
-/*   Updated: 2020/02/17 14:49:02 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/03/05 00:57:27 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int8_t	ft_atol(const char *s, int64_t *result)
 {
 	size_t	i;
-	int8_t	sign;
 	int64_t	save;
+	int8_t	sign;
 
 	i = 0;
 	*result = 0;

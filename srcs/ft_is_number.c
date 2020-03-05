@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 09:23:40 by mpivet-p          #+#    #+#             */
-/*   Updated: 2020/02/07 00:15:21 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:00:41 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int8_t	ft_is_number(const char *s)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
 	while (s && s[i])

@@ -6,18 +6,18 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:42:44 by arsciand          #+#    #+#             */
-/*   Updated: 2019/07/07 13:44:09 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:21:10 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 #include <unistd.h>
 
-int32_t		ft_atoi(const char *s)
+int32_t	ft_atoi(const char *s)
 {
 	size_t	i;
-	int8_t	sign;
 	int32_t	nb;
+	int8_t	sign;
 
 	i = 0;
 	nb = 0;

@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/28 23:48:13 by mpivet-p          #+#    #+#             */
-/*   Updated: 2020/02/07 00:08:44 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:00:08 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@
 u_int64_t	ft_get_options(int argc, char **argv, char *allowed)
 {
 	u_int64_t	ret;
-	int			j;
-	int			i;
+	size_t		j;
+	size_t		i;
 
 	j = 0;
 	ret = 0;
-	while (++j < argc && argv[j][0] == '-')
+	while (++j < (size_t)argc && argv[j][0] == '-')
 	{
 		i = 0;
 		while (argv[j][++i])

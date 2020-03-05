@@ -6,13 +6,13 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/26 17:35:57 by fcatusse          #+#    #+#             */
-/*   Updated: 2020/02/07 00:15:37 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:03:02 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-u_int8_t		ft_isnum(char *str)
+u_int8_t	ft_isnum(char *str)
 {
 	if (str == NULL)
 		return (0);

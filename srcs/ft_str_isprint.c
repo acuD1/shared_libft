@@ -3,24 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_isprint.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fcatusse <fcatusse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 13:22:52 by fcatusse          #+#    #+#             */
-/*   Updated: 2020/02/17 13:25:40 by fcatusse         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:08:48 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-int8_t		ft_str_isprint(const char *str)
+u_int8_t	ft_str_isprint(const char *str)
 {
-	int		i;
+	size_t	i;
 
-	i = -1;
-	while (str[++i])
+	i = 0;
+	while (str[i])
 	{
 		if (!ft_is_print(str[i]))
 			return (0);
+		i++;
 	}
 	return (1);
 }

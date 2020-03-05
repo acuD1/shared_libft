@@ -6,13 +6,13 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 12:20:14 by fcatusse          #+#    #+#             */
-/*   Updated: 2020/02/07 00:10:11 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:19:54 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-int		ft_is_print(int c)
+u_int8_t	ft_is_print(int16_t c)
 {
 	if (c > 31 && c < 127)
 		return (1);

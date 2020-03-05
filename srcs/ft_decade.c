@@ -6,15 +6,15 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 15:23:18 by fcatusse          #+#    #+#             */
-/*   Updated: 2020/02/07 00:15:07 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 00:58:05 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-int		ft_decade(int nbr)
+size_t	ft_decade(int32_t nbr)
 {
-	int		size;
+	size_t	size;
 
 	size = 0;
 	while (nbr != 0)

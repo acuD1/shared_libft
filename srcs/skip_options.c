@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   skip_options.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpivet-p <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 03:46:53 by mpivet-p          #+#    #+#             */
-/*   Updated: 2020/02/09 04:04:45 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:18:05 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-int		skip_opt(char **argv)
+size_t	skip_opt(char **argv)
 {
-	int		i;
+	size_t	i;
 
 	i = 1;
 	while (argv[i] && argv[i][0] == '-')

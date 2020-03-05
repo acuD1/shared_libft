@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 16:05:06 by fcatusse          #+#    #+#             */
-/*   Updated: 2019/07/19 12:34:52 by fcatusse         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:07:22 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-void	ft_putnbr(int n)
+void	ft_putnbr(int32_t n)
 {
 	ft_putnbr_fd(n, 1);
 }

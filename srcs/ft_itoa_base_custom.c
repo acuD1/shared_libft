@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/04 18:05:17 by arsciand          #+#    #+#             */
-/*   Updated: 2020/03/04 22:04:01 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:04:54 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ char	*ft_itoa_base_custom(u_int64_t nbr, int32_t base)
 {
 	static char	hex[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
 	'A', 'B', 'C', 'D', 'E', 'F'};
+	char		*str;
+	u_int64_t	converted_nbr[64];
 	u_int64_t	n;
 	int64_t		i;
-	u_int64_t	converted_nbr[64];
-	char		*str;
 
 	if (nbr == 0)
 		return (ft_strdup("0"));

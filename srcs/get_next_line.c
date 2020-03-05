@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 14:43:41 by mpivet-p          #+#    #+#             */
-/*   Updated: 2020/03/04 23:05:29 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:31:45 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-static void	my_cat(char *dest, char *src)
+static void		my_cat(char *dest, char *src)
 {
 	size_t	i;
 
@@ -58,7 +58,7 @@ static u_int8_t	read_line(char **line, char *buffer, int fd, char *tmp)
 	return (0);
 }
 
-int			get_next_line(int fd, char **line)
+int				get_next_line(int fd, char **line)
 {
 	static char	buffer[BUFF_MAX + 1];
 	char		*tmp;

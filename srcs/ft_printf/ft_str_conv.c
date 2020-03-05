@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:43 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 00:17:05 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:31:22 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ static int		wstring_handler(PF *argument, va_list ap)
 		argument->warg = L"(null)";
 	len = (ssize_t)ft_wbytelen(argument->warg);
 	if (argument->flags[0] > -1 && argument->flags[0] < len)
-		argument->arg = ft_wstrsub(argument->warg, 0, (size_t)argument->flags[0]);
+		argument->arg = ft_wstrsub(argument->warg,
+							0, (size_t)argument->flags[0]);
 	else
 		argument->arg = ft_transform_wchar_in_char(argument->warg);
 	return (ft_print_str(argument));

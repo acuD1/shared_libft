@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 00:50:59 by mpivet-p          #+#    #+#             */
-/*   Updated: 2020/02/07 00:18:16 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:15:27 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	**ft_tabchr(char **tab_src, char *str)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
 	if (tab_src && str)

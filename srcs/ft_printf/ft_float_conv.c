@@ -6,13 +6,13 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 14:42:32 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 00:06:04 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:30:34 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int				ft_wildcard(PF *argument, va_list ap, int i)
+int					ft_wildcard(PF *argument, va_list ap, int i)
 {
 	if (argument->format[argument->index] == '*')
 	{
@@ -36,7 +36,7 @@ int				ft_wildcard(PF *argument, va_list ap, int i)
 	return (1);
 }
 
-static long double		ft_round(long double nbr, size_t precision)
+static long double	ft_round(long double nbr, size_t precision)
 {
 	size_t		i;
 	long double	fl;
@@ -106,7 +106,7 @@ static char			*ft_ftoa(long double nbr, PF *argument, size_t precision)
 	return (argument->arg);
 }
 
-int				float_handler(PF *argument, va_list ap)
+int					float_handler(PF *argument, va_list ap)
 {
 	long double	n;
 	size_t		precision;

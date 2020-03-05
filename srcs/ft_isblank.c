@@ -6,13 +6,13 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 18:46:06 by fcatusse          #+#    #+#             */
-/*   Updated: 2019/09/23 13:53:09 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:20:22 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
 
-int		ft_isblank(int c)
+int16_t	ft_isblank(int16_t c)
 {
 	return (c == ' ' || c == '\n' || c == '\t');
 }

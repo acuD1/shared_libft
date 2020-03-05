@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 14:27:26 by arsciand          #+#    #+#             */
-/*   Updated: 2019/07/07 14:27:35 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 01:06:31 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memcpy(void *dst, const void *s, size_t n)
 {
-	size_t		i;
-	char		*tmp_dst;
 	const char	*tmp_s;
+	char		*tmp_dst;
+	size_t		i;
 
 	i = 0;
 	tmp_dst = dst;
