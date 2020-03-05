@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:26:27 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 03:02:02 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/05 03:19:30 by arsciand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static u_int8_t	wchar_handler(va_list ap, PF *argument)
 	}
 	if (!(argument->arg = ft_strnew(4)))
 		return (0);
-	ft_wchartostr(argument->arg, (wint_t)c);
+	ft_wchartostr(argument->arg, (wchar_t)c);
 	ft_print_str(argument);
 	return (0);
 }
