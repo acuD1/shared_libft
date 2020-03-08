@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:26:05 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 03:04:51 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/08 14:10:21 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,8 @@
 # define LCYA		"\033[01;36m"
 # define RST		"\033[01;37m"
 
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <wchar.h>
 # include "shared_libft.h"
+# include <wchar.h>
 
 extern char				g_buff[BUFF_MAX];
 extern size_t			g_i;

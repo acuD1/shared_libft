@@ -6,11 +6,12 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/22 18:26:20 by fcatusse          #+#    #+#             */
-/*   Updated: 2020/03/05 01:15:53 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/08 14:00:40 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
+#include <stdlib.h>
 
 void	ft_tabfree(char **array)
 {

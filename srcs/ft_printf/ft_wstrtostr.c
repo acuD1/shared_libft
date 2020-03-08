@@ -6,11 +6,12 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:14:04 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 02:30:16 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/08 14:11:49 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdlib.h>
 
 size_t	ft_putwchar_in_char(wchar_t wchar, char *fresh, size_t i)
 {

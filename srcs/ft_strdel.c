@@ -6,11 +6,12 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/09 10:43:53 by arsciand          #+#    #+#             */
-/*   Updated: 2020/03/05 14:42:20 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/03/08 13:57:54 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
+#include <stdlib.h>
 
 void	ft_strdel(char **as)
 {

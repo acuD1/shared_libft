@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/03/05 01:46:23 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/08 14:03:57 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # define TRUE		1
 
 # include "ft_printf.h"
+# include <stdint.h>
+# include <stddef.h>
 
 typedef struct		s_lst
 {

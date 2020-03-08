@@ -6,11 +6,12 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 14:25:38 by arsciand          #+#    #+#             */
-/*   Updated: 2019/07/07 14:26:37 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/08 13:56:27 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
+#include <stdlib.h>
 
 void	*ft_memalloc(size_t size)
 {

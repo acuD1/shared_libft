@@ -6,11 +6,12 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 15:27:43 by guvillat          #+#    #+#             */
-/*   Updated: 2020/03/05 03:02:58 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/08 14:11:35 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <unistd.h>
 
 void			ft_display(PF *argument)
 {

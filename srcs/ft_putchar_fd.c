@@ -6,11 +6,12 @@
 /*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 16:03:08 by fcatusse          #+#    #+#             */
-/*   Updated: 2019/07/19 12:34:27 by fcatusse         ###   ########.fr       */
+/*   Updated: 2020/03/08 13:57:10 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
+#include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd)
 {

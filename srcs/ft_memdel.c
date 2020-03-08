@@ -6,11 +6,12 @@
 /*   By: mpivet-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 20:37:01 by mpivet-p          #+#    #+#             */
-/*   Updated: 2019/09/25 19:50:52 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/03/08 13:56:43 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
+#include <stdlib.h>
 
 void	ft_memdel(void **ap)
 {

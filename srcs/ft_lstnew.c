@@ -6,11 +6,12 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 14:16:23 by arsciand          #+#    #+#             */
-/*   Updated: 2020/01/08 18:58:43 by guvillat         ###   ########.fr       */
+/*   Updated: 2020/03/08 13:55:49 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
+#include <stdlib.h>
 
 t_lst	*ft_lstnew(const void *content, size_t content_size)
 {

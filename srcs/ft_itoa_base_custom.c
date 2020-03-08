@@ -6,11 +6,12 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/04 18:05:17 by arsciand          #+#    #+#             */
-/*   Updated: 2020/03/05 01:04:54 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/08 13:29:50 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
+#include <stdlib.h>
 
 char	*ft_itoa_base_custom(u_int64_t nbr, int32_t base)
 {

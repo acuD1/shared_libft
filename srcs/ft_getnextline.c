@@ -6,12 +6,13 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/09 10:52:53 by arsciand          #+#    #+#             */
-/*   Updated: 2020/03/05 01:21:58 by arsciand         ###   ########.fr       */
+/*   Updated: 2020/03/08 13:56:05 by mpivet-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared_libft.h"
-#include "unistd.h"
+#include <unistd.h>
+#include <stdlib.h>
 
 static int32_t	check_line(char **stack)
 {
