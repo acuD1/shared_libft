@@ -23,6 +23,7 @@
 # include "ft_printf.h"
 # include <stdint.h>
 # include <stddef.h>
+# include <sys/types.h>
 
 typedef struct		s_lst
 {
