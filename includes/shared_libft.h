@@ -20,10 +20,10 @@
 # define FALSE		0
 # define TRUE		1
 
+# include <sys/types.h>
 # include "ft_printf.h"
 # include <stdint.h>
 # include <stddef.h>
-# include <sys/types.h>
 
 typedef struct		s_lst
 {
