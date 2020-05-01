@@ -96,9 +96,9 @@ SRC				+=	$(S_PATH)ft_strcmp.c
 SRC				+=	$(S_PATH)ft_strcpy.c
 SRC				+=	$(S_PATH)ft_strdel.c
 SRC				+=	$(S_PATH)ft_strdup.c
-SRC 			+=	$(S_PATH)ft_strequ.c
-SRC 			+=	$(S_PATH)ft_strisdigit.c
-SRC 			+=	$(S_PATH)ft_str_isprint.c
+SRC				+=	$(S_PATH)ft_strequ.c
+SRC				+=	$(S_PATH)ft_strisdigit.c
+SRC				+=	$(S_PATH)ft_str_isprint.c
 SRC				+=	$(S_PATH)ft_strjoin.c
 SRC				+=	$(S_PATH)ft_strjoinf.c
 SRC				+=	$(S_PATH)ft_strlen_to.c
@@ -150,16 +150,17 @@ vpath %.h $(H_PATH)
 
 # Variables
 
-DEBUG				=
-CFLAGS				= -Wall -Wextra -Werror
+DEBUG			=
+CFLAGS			=	-Wall -Wextra -Werror
 ifeq ($(DEBUG), g)
-	CFLAGS = -g
+	CFLAGS		=	-g
 else ifeq ($(DEBUG), fsanitize)
-	CFLAGS = -fsanitize=address
+	CFLAGS		=	-fsanitize=address
 else ifeq ($(DEBUG), hard)
-	CFLAGS = -Wall -Weverything -fsanitize=address,undefined -Wno-cast-qual
+	CFLAGS		+=	-Wall -Weverything -fsanitize=address,undefined -Wno-cast-qual
+	CFLAGS		+=	-Wno-missing-noreturn -Wno-disabled-macro-expansio
 else ifeq ($(DEBUG), dev)
-	CFLAGS =
+	CFLAGS		=
 endif
 CC				=	clang $(CFLAGS)
 COMPL			=	$(CC) -c -I$(H_PATH)
