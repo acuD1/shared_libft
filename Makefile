@@ -158,7 +158,7 @@ else ifeq ($(DEBUG), fsanitize)
 	CFLAGS		=	-fsanitize=address
 else ifeq ($(DEBUG), hard)
 	CFLAGS		+=	-Wall -Weverything -fsanitize=address,undefined -Wno-cast-qual
-	CFLAGS		+=	-Wno-missing-noreturn -Wno-disabled-macro-expansio
+	CFLAGS		+=	-Wno-missing-noreturn -Wno-disabled-macro-expansion
 else ifeq ($(DEBUG), dev)
 	CFLAGS		=
 endif
