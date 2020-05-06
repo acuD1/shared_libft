@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/03/08 14:03:57 by mpivet-p         ###   ########.fr       */
+/*   Updated: 2020/05/06 19:37:37 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,6 @@ size_t				ft_tablen(char **array);
 int16_t				ft_tolower(int16_t c);
 size_t				skip_opt(char **argv);
 char				*ft_realloc(char *ptr, size_t size);
+void				ft_lstsort(t_lst **lst, int (*cmp)(void *, void *));
 
 #endif
