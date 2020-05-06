@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/05/06 19:37:37 by fcatusse         ###   ########.fr       */
+/*   Updated: 2020/05/06 19:43:57 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,5 +106,7 @@ int16_t				ft_tolower(int16_t c);
 size_t				skip_opt(char **argv);
 char				*ft_realloc(char *ptr, size_t size);
 void				ft_lstsort(t_lst **lst, int (*cmp)(void *, void *));
+int					ft_lstcmp
+						(t_lst *lst1, t_lst *lst2, int (*f)(void *, void *));
 
 #endif
