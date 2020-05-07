@@ -125,6 +125,8 @@ SRC				+=	$(S_PATH)skip_options.c
 SRC				+=	$(S_PATH)ft_realloc.c
 SRC				+=	$(S_PATH)ft_lstsort.c
 SRC				+=	$(S_PATH)ft_lstcmp.c
+SRC				+=	$(S_PATH)ft_lstdel.c
+SRC				+=	$(S_PATH)ft_lstdelone.c
 
 SRC				+=	$(S_PATH)$(PRINTF)ft_char_conv.c
 SRC				+=	$(S_PATH)$(PRINTF)ft_flags.c

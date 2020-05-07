@@ -6,7 +6,7 @@
 /*   By: arsciand <arsciand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 12:36:29 by arsciand          #+#    #+#             */
-/*   Updated: 2020/05/06 19:54:00 by fcatusse         ###   ########.fr       */
+/*   Updated: 2020/05/07 14:12:59 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,7 @@ size_t				skip_opt(char **argv);
 char				*ft_realloc(char *ptr, size_t size);
 void				ft_lstsort(t_lst **lst, int (*cmp)(void *, void *));
 int					ft_lstcmp(void *data1, void *data2);
+void				ft_lstdel(t_lst **alst, void (*del)(void *, size_t));
+void				ft_lstdelone(t_lst **alst, void (*del)(void *, size_t));
 
 #endif
