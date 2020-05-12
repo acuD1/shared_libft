@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "shared_libft.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
